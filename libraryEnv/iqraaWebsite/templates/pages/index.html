@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main/css-files/index.css">      
+    <title>Online library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mainPage">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="main/html-files/bookList.html">Books</a>
+                <li><a href="main/html-files/contact.html">Contact</a>
+                <li><a href="main/html-files/about.html">About</a>
+            </ul>
+        </nav> 
+        <div class="container">
+        <h1 class="logo">Iqraa Account</h1>
+            <form onsubmit="checkCredentials(event)">
+                <label class="label" for="Username">Username</label><br>
+                <input type="text" id="Username" required><br>
+                <label class="label" for="Password">Passowrd</label><br>
+                <input type="password" id="Password" required><br>
+                <div><input class="login" type="submit" value="Login" id="login"></div>
+                <div><a href="main/html-files/signup.html" id = "signUp" class="signUp">Don't have an account</a></div>
+            </form>   
+        </div>
+    </div>
+    <script src="main/java-files/index.js"></script>
+</body>
+</html>
