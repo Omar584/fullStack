@@ -7,3 +7,4 @@ def about(request):
     return render(request,'pages/main/about.html')
 
 
+
