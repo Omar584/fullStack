@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css-files/bookDescription.css">
+    <title>happily Never After</title>
+</head>
+<body>
+    <div class = "mainPage">
+        <nav>
+            <ul>
+                <li><a href="../adminPage.html">Home</a>
+                <li><a href="../bookList.html">Books</a>
+                <li><a href="../addBook.html">Add-Book</a>
+                <li><a href="../deleteBook.html">Delete-Book</a> 
+                <li><a href="../profile.html">Profile</a>    
+            </ul>      
+        </nav>
+
+        <h1 id="name">happily Never After</h1>
+
+        <h2 id="author">Lynn Painter</h2>
+
+        <div id = "image">
+            <img src="../../../images/happilyNeverAfter.jpg" alt="happilyNeverAfter">
+        </div>
+
+        <div class = "bookDescription">
+
+            <h2 >Book-ID : <strong id="id">1010</strong> </h2>
+
+            <strong id="category">Novel</strong>
+
+            <div class = "description" id="description">
+Two love sceptics agree to work together as 
+professional wedding disruptors. But fate has more romantic 
+plans in mind for them . . .
+When Sophie finds out right before getting married that she’s 
+been cheated on (again!) it’s time for drastic action. Instead 
+of calling the wedding off, she hires a gorgeous stranger – Max – 
+to interrupt the ceremony and confront her fiancé. It’s hardly the 
+wedding she’d planned. But Sophie enjoys taking revenge. So, when Max
+asks if she’ll work with him to help others expose their cheating 
+partners, Sophie agrees. When they’re hired by a man who’s marrying
+the girl that once broke Max’s heart, Sophie expects Max to revel 
+in the job. But instead, he seems to be wrestling with his feelings
+for his ex. And worse than that, Sophie is jealous 
+            </div>
+                <div class = "button">
+                    <a href="../../html-files/editBook.html">
+                        <button id="myButton"  onclick="saveBookDetails()"  >Edit Book</button>
+                    </a>
+                </div>
+                <div class = "button">
+    
+                    <button id="myButton" onclick="editBookDetails()" >save Book Edits</button>
+                    
+                    
+                </div>
+                <script src="../../java-files/editBook.js"></script>
+</body>
+</html>

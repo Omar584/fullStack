@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add-Book</title>
+    <!-- Link to an external CSS file for styling the page -->
+    <link rel="stylesheet" href="../css-files/editBook.css">
+</head>
+<body>
+    <!-- Main container div for the page content -->
+    <div class="mainPage">
+        <!-- Navigation menu for the site -->
+        <nav>
+            <ul>
+                <!-- List of links to other pages in the admin interface -->
+                <li><a href="adminPage.html">Home</a></li>
+                <li><a href="bookList.html">Books</a></li>
+                <li><a href="addBook.html">Add-Book</a></li>
+                <li><a href="deleteBook.html">Delete-Book</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+        <!-- Heading for the current page -->
+        <h1>Add-Book</h1>
+        <!-- Form for adding a new book -->
+        <form id="bookForm">
+            <input type="text" id="bookId" placeholder="Enter Book ID" required><br>
+            <input type="text" id="bookName" placeholder="Enter Book Name" required><br>
+            <input type="text" id="category" placeholder="Enter Book Category" required><br>
+            <input type="text" id="bookAuthor" placeholder="Enter Book Author" required><br>
+            <textarea id="description" placeholder="Enter Book Description" rows="4" cols="50" required></textarea><br>
+            <input type="file" id="bookImage" required><br>
+            <!-- Button to submit the form -->
+            <button type="submit">Save Book</button>
+        </form>
+    </div>
+    <!-- Link to the external JavaScript file that handles the form submission -->
+    <script src="../java-files/addBookForm.js"></script>
+</body>
+</html>

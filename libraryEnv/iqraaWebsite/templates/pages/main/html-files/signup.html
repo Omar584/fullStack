@@ -1,0 +1,54 @@
+<!--
+    this is the sign-up file 
+-->
+
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset='utf-8'>
+        <title>sign-up</title>
+        <link rel="stylesheet" href="../css-files/signUp.css">
+    </head>
+    <body>
+        <div class = "mainPage">
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a>
+                    <li><a href="bookList.html">Books</a>
+                    <li><a href="about.html">About</a> 
+                    <li><a href="contact.html">Contact</a>       
+                </ul>
+            </nav>
+            <div class = "mainContainer">
+                <h1>SIGN UP</h1>
+                <form onsubmit="validation(event)">
+                    <div>
+                        <label for="uname">Username</label><br>
+                        <input type="text" id="uname" name="uname" required ><br><br>
+                    </div>
+                    <div>
+                        <label for="pass">Password</label><br>
+                        <input type="password" id="pass" name="pass" required><br><br>        
+                    </div>
+                    <div>
+                        <label for="cpass">Confirm password</label><br>
+                        <input type="password" id="cpass" name="cpass" required><br><br>
+                    </div>
+                    <div>
+                        <label for="em">E-mail</label><br>
+                        <input type="email" id="em" name="em" required><br><br>
+                    </div> 
+                    <div class = "checkbox">
+                        <input type="checkbox" id="is_admin" name="is_admin" value="1" >
+                        <label for="is_admin">is_admin</label>
+                    </div>
+                    <div class = "submit">
+                        <input type="submit" value="Submit" id = "submit">
+                    </div>
+                </form> 
+                <script src="../java-files/signUp.js"></script>
+            </div>
+        </div>
+        
+    </body>
+</html>

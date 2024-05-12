@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css-files/bookDescription.css">
+    <title>Rich Dad Poor Dad</title>
+</head>
+<body>
+    <div class = "mainPage">
+        <nav>
+            <ul>
+                <li><a href="../adminPage.html">Home</a>
+                <li><a href="../bookList.html">Books</a>
+                <li><a href="../addBook.html">Add-Book</a>
+                <li><a href="../deleteBook.html">Delete-Book</a> 
+                <li><a href="../profile.html">Profile</a>    
+            </ul>      
+        </nav>
+        <h1 id="name">Creativity</h1>
+
+        <h2 id="author">Mihaly Csikszentmihalyi</h2>
+
+        <div id = "image">
+            <img src="../../../images/creativity.jpg" alt="Creativity">
+        </div>
+
+        <div class = "bookDescription">
+
+            <h2 >Book-ID : <strong id="id">1006</strong> </h2>
+
+            <strong id="category">Philosophical study</strong>
+
+            <div class = "description" id="description">
+The book examines the creative excitement 
+experienced by artists, scientists, and exceptional individuals.
+Csikszentmihalyi interviewed over 90 people 
+who have transformed their fields, 
+exploring how creativity shapes their lives.
+He challenges the myth of the “tortured genius” and 
+emphasizes the need to cultivate creativity not only in arts 
+and sciences but also in business, government, and education.
+By studying the lives of these exceptional individuals,
+Csikszentmihalyi shows us how we can enhance our everyday lives 
+through creativity  
+            </div>
+            <div class = "button">
+                <a href="../../html-files/editBook.html">
+                    <button id="myButton"  onclick="saveBookDetails()"  >Edit Book</button>
+                </a>
+            </div>
+            <div class = "button">
+
+                <button id="myButton" onclick="editBookDetails()" >save Book Edits</button>
+                
+                
+            </div>
+            <script src="../../java-files/editBook.js"></script>
+</body>
+</html>

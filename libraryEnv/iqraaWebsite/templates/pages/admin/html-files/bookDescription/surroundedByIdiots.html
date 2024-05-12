@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css-files/bookDescription.css">
+    <title>surrounded By Idiots</title>
+</head>
+<body>
+    <div class = "mainPage">
+        <nav>
+            <ul>
+                <li><a href="../adminPage.html">Home</a>
+                <li><a href="../bookList.html">Books</a>
+                <li><a href="../addBook.html">Add-Book</a>
+                <li><a href="../deleteBook.html">Delete-Book</a> 
+                <li><a href="../profile.html">Profile</a>    
+            </ul>      
+        </nav>
+
+        <h1 id="name">surrounded By Idiots</h1>
+
+        <h2 id="author">Thomas Erikson</h2>
+
+        <div id = "image">
+            <img src="../../../images/surroundedByIdiots.jpeg" alt="surroundedByIdiots">
+        </div>
+
+        <div class = "bookDescription">
+
+            <h2 >Book-ID : <strong id="id">1007</strong> </h2>
+
+            <strong id="category">Communiction</strong>
+
+            <div class = "description" id="description">
+Author Thomas Erikson explains that there 
+are four key behavior types that define how we 
+interact with and perceive the people around us. 
+Understanding someone’s pattern of behavior is the 
+key to successful communication. Erikson breaks down 
+the four kinds of behavior types—Reds who are dominant 
+and commanding, Yellows who are social and optimistic, 
+Greens who are laid back and friendly, and Blues who 
+are analytical and precise—and explains how to identify 
+and interact with each type of person. Instead of 
+being bogged down with overly technical categorizations, 
+the simple four color system allows you to speedily 
+identify a friend or coworker and adjust how you speak and share with them.
+            </div>
+                <div class = "button">
+                    <a href="../../html-files/editBook.html">
+                        <button id="myButton"  onclick="saveBookDetails()"  >Edit Book</button>
+                    </a>
+                </div>
+                <div class = "button">
+    
+                    <button id="myButton" onclick="editBookDetails()" >save Book Edits</button>
+                    
+                    
+                </div>
+                <script src="../../java-files/editBook.js"></script>
+</body>
+</html>

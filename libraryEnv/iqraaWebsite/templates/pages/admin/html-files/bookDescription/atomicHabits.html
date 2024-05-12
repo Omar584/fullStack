@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css-files/bookDescription.css">
+    <title>Atomic Habits</title>
+</head>
+<body>
+    <div class = "mainPage">
+        <nav>
+            <ul>
+                <!-- Home page -->
+                <li><a href="../adminPage.html">Home</a>
+                <li><a href="../bookList.html">Books</a>
+                <li><a href="../addBook.html">Add-Book</a>
+                <li><a href="../deleteBook.html">Delete-Book</a> 
+                <li><a href="../profile.html">Profile</a>    
+            </ul>      
+        </nav>
+        <h1 id="name">Atomic Habits</h1>
+
+        <h2 id="author"> James Clear </h2>
+
+        <div id = "image">
+            <img src="../../../images/AtomicHabits.jpg" alt="Atomic Habits" width="400px">
+        </div>
+
+        <div class = "bookDescription">
+
+            <h2 >Book-ID : <strong id="id">1002</strong> </h2>
+
+            <strong id="category">Self-development</strong>
+
+            <div class = "description" id="description">
+Atomic Habits by James Clear is a self-help book 
+that provides a framework 
+for building good habits and breaking bad ones. 
+The book offers practical strategies for making 
+small, consistent changes that can lead to 
+significant personal growth. 
+It teaches readers a simple set of rules 
+for creating good habits and breaking bad ones, 
+using a framework called the Four Laws of Behavior Change
+            </div>
+            <div class = "button">
+                <a href="../../html-files/editBook.html">
+                    <button id="myButton"  onclick="saveBookDetails()"  >Edit Book</button>
+                </a>
+            </div>
+            <div class = "button">
+
+                <button id="myButton" onclick="editBookDetails()" >save Book Edits</button>
+                
+                
+            </div>
+        <script src="../../java-files/editBook.js"></script>
+</body>
+</html>
