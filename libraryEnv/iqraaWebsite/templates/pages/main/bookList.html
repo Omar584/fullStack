@@ -20,15 +20,15 @@
             </ul>
         </nav>
         <div class = "mainContainer">
-            {% for book in allbooks.products %}
+            {% for book in allbooks %}
                 <h1>{{book.name}}</h1>
-                <!-- <div class = "imageContainer">
+            {% endfor %}
+            <!-- <div class = "imageContainer">
                     <a href="">
                         <img src="{{book.image}}" alt="{{book.name}}">
                         <div class="bName">{{book.name}}</div>
                     </a>
                 </div> -->
-            {% endfor %}
         </div>
     </div>
 </body>
