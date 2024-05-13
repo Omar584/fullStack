@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def userPage(request):
+    return render(request,'pages/user/userPage.html' , name = 'userPage'),
