@@ -6,3 +6,8 @@ def adminHome(request):
 def adminbooks(request):
     return render(request , 'pages/admin/bookList.html')
 
+def adminprofile(request):
+    return render(request , 'pages/admin/profile.html')
+
+
+
