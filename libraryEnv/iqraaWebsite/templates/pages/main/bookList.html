@@ -20,109 +20,16 @@
             </ul>
         </nav>
         <div class = "mainContainer">
-            <div class = "imageContainer">
-                <a href="bookDescription/richDad.html">
-                <img src="{% static 'image/richDadPoorDad.jpg' %}" alt="Rich Dad Poor Dad">
-                <div class="bName">Rich Dad Poor Dad</div>
-                </a>  
-            </div>
-            <div class = "imageContainer">
-                <a href="bookDescription/atomicHabits.html">
-                <img src="{% static 'image/atomicHabits.jpg' %}" alt="Atomic Habits">
-                    <div class="bName">Atomic Habits</div>
-                </a>
-            </div>
-            <div class = "imageContainer">
-                <a href="bookDescription/the100.html">
-                <img src="{% static 'image/the100.jpg' %}" alt="The 100">
-                    <div class="bName">The 100</div>
-                </a>
-            </div>
-            <div class = "imageContainer">
-                <a href="bookDescription/kingLear.html">
-                <img src="{% static 'image/kingLear.jpeg' %}" alt="King Lear">
-
-                    <div class="bName">King Lear</div>            </a>
-            </div>
-            <div class = "imageContainer">
-                <a href="bookDescription/forrestGump.html">
-                <img src="{% static 'image/forrestGump.jpeg' %}" alt="Forrest Gump">
-                    <div class="bName">Forrest Gump</div>
-                </a>
-            </div>
-            <div class = "imageContainer">
-                <a href="bookDescription/creativity.html">
-                    <img src="{% static 'image/creativity.jpg' %}" alt="Creativity">
-                    <div class="bName">Creativity</div>
-                </a>
-            </div>
-            <div class = "imageContainer">
-                <a href="bookDescription/surroundedByIdiots.html">
-                    <img src="{% static 'image/surroundedByIdiots.jpeg' %}" alt="Surrounded by Idiots">
-                    <div class="bName">Surrounded by Idiots</div>
-                </a>
-            </div>
-            <div class = "imageContainer">
-                <a href="bookDescription/meinKampf.html">
-                    <img src="{% static 'image/meinKampf.jpeg' %}" alt="Mein Kampf">
-                    <div class="bName">Mein Kampf</div>
-                </a>
-            </div>          
-            <div class = "imageContainer">
-                <a href="bookDescription/saveTheCat.html">
-                    <img src="{% static 'image/saveTheCat.jpeg' %}" alt="Save The Cat">
-                    <div class="bName">Save The Cat</div>
-                </a>
-            </div> 
-            <div class = "imageContainer">
-                <a href="bookDescription/happilyNeverAfter.html">
-                    <img src="{% static 'image/happilyNeverAfter.jpg' %}" alt="happilyNeverAfter">
-                    <div class="bName">Happily Never End</div>
-                </a>
-            </div>     
-            <div class = "imageContainer">
-                <a href="bookDescription/cleanCode.html">
-                    <img src="{% static 'image/cleanCode.jpg' %}" alt="cleanCode">
-                    <div class="bName">Clean Code</div>
-                </a>
-            </div>   
-            <div class = "imageContainer">
-                <a href="bookDescription/introToAlgorithms.html">
-                    <img src="{% static 'image/introToAlgorithms.jpg' %}" alt="Algorithms">
-                    <div class="bName">Algorithms</div>
-                </a>
-            </div> 
-            <div class = "imageContainer">
-                <a href="bookDescription/bodyLanuage.html">
-                    <img src="{% static 'image/bodyLanguage.png' %}" alt="bodyLanguage">
-                    <div class="bName">Body Language</div>
-                </a>
-            </div>  
-            <div class = "imageContainer">
-                <a href="bookDescription/DeathOnTheNile.html">
-                    <img src="{% static 'image/DeathOnTheNile.jpg' %}" alt="deathOnTheNile">
-                    <div class="bName">Death on The Nile</div>
-                </a>
-            </div>   
-            <div class = "imageContainer">
-                <a href="bookDescription/theAlchemist.html">
-                    <img src="{% static 'image/theAlchemist.jpg' %}" alt="theAlchemist">
-                    <div class="bName">The Alchemist</div>
-                </a>
-            </div> 
-            <div class = "imageContainer">
-                <a href="bookDescription/theRulesOfTheNeighbourhood.html">
-                    <img src="{% static 'image/theRulesOfTheNei.jpg' %}" alt="theRulesOfTheNeighbourhood">
-                    <div class="bName">Laws of Jartin</div>
-                </a>    
-            </div>   
+            {% for book in products %}
+                <h1>{{book.name}}</h1>
+                <!-- <div class = "imageContainer">
+                    <a href="">
+                        <img src="{{book.image}}" alt="{{book.name}}">
+                        <div class="bName">{{book.name}}</div>
+                    </a>
+                </div> -->
+            {% endfor %}
         </div>
     </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 </body>
 </html>
