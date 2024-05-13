@@ -3,7 +3,7 @@
   src: url(../../Bitter/Bitter-VariableFont_wght.ttf);
 }
 
-html{    
+body{    
     height: 100%;
     font-family: "Bitter", serif;
     font-optical-sizing: auto;
@@ -11,7 +11,7 @@ html{
     font-style: normal;
     background: rgb(0,0,0);
     background: linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.691841702501313) 55%, 
-    rgba(255,255,255,0) 100%), url(../../images/mainPhoto.jpg);
+    rgba(255,255,255,0) 100%), url("{% static '../../../../image/mainPhoto.jpg' %}");
     background-size: cover;
     background-repeat: no-repeat;
 }
