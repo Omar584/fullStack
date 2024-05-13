@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'book.apps.BookConfig',
     'adminpages.apps.AdminpagesConfig',
+    'userpages.apps.UserpagesConfig',
     'mainpages.apps.MainpagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
