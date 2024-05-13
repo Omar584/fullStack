@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 
 def userPage(request):
-    return render(request,'pages/user/userPage.html' , name = 'userPage'),
+    return render(request,'pages/user/userPage.html')
