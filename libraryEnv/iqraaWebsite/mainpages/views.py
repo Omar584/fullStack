@@ -12,4 +12,7 @@ def contact(request):
 def about(request):
     return render(request,'pages/main/about.html')
 
+def signup(request):
+    return render(request,'pages/main/signup.html')
+
 

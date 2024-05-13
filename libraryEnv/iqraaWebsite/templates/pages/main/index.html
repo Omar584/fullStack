@@ -29,7 +29,7 @@
                 <label class="label" for="Password">Passowrd</label><br>
                 <input type="password" id="Password" required><br>
                 <div><input class="login" type="submit" value="Login" id="login"></div>
-                <div><a href="main/html-files/signup.html" id = "signUp" class="signUp">Don't have an account</a></div>
+                <div><a href="{% url 'signup' %}" id = "signUp" class="signUp">Don't have an account</a></div>
             </form>   
         </div>
     </div>
