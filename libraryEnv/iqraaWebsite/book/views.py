@@ -5,5 +5,5 @@ from .models import Book
 
 
 def books(request):
-    allbooks = {'products' : Book.objects.all()}
-    return render(request , 'pages/main/bookList.html' , allbooks)
+    books = Book.objects.all() 
+    return render(request , 'pages/main/bookList.html' , {'books' : books})
