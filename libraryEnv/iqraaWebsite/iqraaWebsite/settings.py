@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'book.apps.BookConfig',
     'adminpages.apps.AdminpagesConfig',
     'mainpages.apps.MainpagesConfig',
     'django.contrib.admin',
