@@ -14,12 +14,11 @@ profile.html
   <div class="mainPage"> 
    <nav> 
     <ul> 
-     <li><a href="userPage.html">Home</a></li> 
-     <li><a href="bookList.html">Books</a></li> 
-     <li><a href="about.html">About</a></li> 
-     <li><a href="contact.html">Contact</a></li> 
-     <li><a href="profile.html">Profile</a><br /></li> 
-     <li><a href="../../index.html">Log-Out</a></li> 
+        <li><a href="{% url 'adminHome' %}">Home</a>
+        <li><a href="{% url 'adminBooks' %}">Books</a>
+        <li><a href="{% url 'addBookPage'  %}">Add-Book</a>
+        <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a> 
+        <li><a href="{% url 'adminProfile'  %}">Profile</a> 
     </ul> 
    </nav> 
  
