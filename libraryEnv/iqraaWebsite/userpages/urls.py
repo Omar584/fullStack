@@ -7,6 +7,7 @@ urlpatterns = [
     path('bookList/' , views.userBooks , name = 'userBooks'),
     path('borrowedBooks/' , views.borrowedbooks , name = 'borrowedBooks'),
     path('changePassword/' , views.userChangePassword , name = 'userChangePassword'),
+    path('about', views.userAbout , name = 'userAbout') ,
     path('profile/' , views.userProfile , name = 'userProfile'),
     path('contact' , views.userContact , name = 'userContact'),
 ]
