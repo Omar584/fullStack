@@ -8,16 +8,16 @@ def userBooks(request):
     inventoryBooks = Book.objects.all()
     return render(request , 'pages/user/bookList.html' , {'books' : inventoryBooks})
 
-def about(request):
+def userAbout(request):
     return render(request , 'pages/user/about.html')
 
-def contact(request):
+def userContact(request):
     return render(request , 'pages/user/contact.html')
 
-def profile(request):
+def userProfile(request):
     return render(request , 'pages/user/profile.html')
 
-def changePassword(request):
+def userChangePassword(request):
     return render(request , 'pages/user/contact.html')
 
 def borrowedbooks(request):
