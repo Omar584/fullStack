@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Borrowed Books</title>
-    <link rel="stylesheet" href="../css-files/bookDescription.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/userPages/bookDescription.css' %}">
 </head>
 <body>
     <div class="mainPage">
@@ -22,7 +23,7 @@
             <!-- Existing content or other elements in the container -->
         </div>
 
-        <script src="../java-files/borrowedBook.js"></script>
+        <script src="{% static 'js/userPages/borrowedBook.js' %}"></script>
     </div>
 
 </body>

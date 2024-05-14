@@ -23,7 +23,7 @@
         <div class="profile-container"> 
             <h2 class="lbl">User Profile</h2> 
             <div class="profile-photo"> 
-                <img src="../../images/profile1.jpg" alt="Profile Photo" /> 
+                <img src="{% static 'image/profile1.jpg' %}" alt="Profile Photo" /> 
             </div> 
             <div class="form-group"> 
                 <label class="lbl" for="username">Username:</label> 
@@ -48,13 +48,13 @@
             /> 
         </div> 
         <div class="links-container"> 
-            <a href="changePassword.html">Change Password</a> 
+            <a href="{% url 'userChangePassword' %}">Change Password</a> 
         </div> 
     </div> 
  
-    <a href="borrowedBooks.html" class="borrowed">Borrowed Books</a> 
+    <a href="{% url 'borrowedBooks' %}" class="borrowed">Borrowed Books</a> 
   </div> 
-  <script src="../java-files/profile.js"></script> 
+  <script src="{% static 'js/userPages/profile.js' %}"></script> 
  </body> 
 </html> 
  

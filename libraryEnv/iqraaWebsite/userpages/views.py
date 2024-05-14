@@ -18,7 +18,7 @@ def userProfile(request):
     return render(request , 'pages/user/profile.html')
 
 def userChangePassword(request):
-    return render(request , 'pages/user/contact.html')
+    return render(request , 'pages/user/changePassword.html')
 
 def borrowedbooks(request):
     return render(request , 'pages/user/borrowedBooks.html')
