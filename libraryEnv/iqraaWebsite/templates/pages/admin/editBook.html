@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css-files/editBook.css">
+    {% load static %}
+    <!-- Link to an external CSS file for styling the page -->
+    <link rel="stylesheet" href="{% static 'css/adminpages/editBook.css' %}">
     <title>Edit book</title>
 </head>
 <body>
@@ -43,7 +45,7 @@
             
         </form>
     </div>
-    <script src="../java-files/editBook.js"></script>
+    <script src="{% static 'js/adminpages/editBook.js' %}"></script>
     <br>
     <br>
     <br>

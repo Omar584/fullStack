@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Add-Book</title>
+    {% load static %}
     <!-- Link to an external CSS file for styling the page -->
-    <link rel="stylesheet" href="../css-files/editBook.css">
+    <link rel="stylesheet" href="{% static 'css/adminpages/editBook.css' %}">
 </head>
 <body>
     <!-- Main container div for the page content -->
@@ -34,6 +35,6 @@
         </form>
     </div>
     <!-- Link to the external JavaScript file that handles the form submission -->
-    <script src="../java-files/addBookForm.js"></script>
+    <script src="{% static 'js/adminpages/addBookForm.js' %}"></script>
 </body>
 </html>

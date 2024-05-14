@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete-Book</title>
-    <link rel="stylesheet" href="../css-files/editBook.css">
+    {% load static %}
+    <!-- Link to an external CSS file for styling the page -->
+    <link rel="stylesheet" href="{% static 'css/adminpages/editBook.css' %}">
 </head>
 <body>
     <div class = "mainPage">
@@ -24,6 +26,6 @@
             <input class="submit" type="submit" value="Delete-Book" id="addDelete">
         </form>
     </div>
-    <script src="../java-files/deleteBookForm.js"></script>
+    <script src="{% static 'js/adminpages/deleteBookForm.js' %}"></script>
 </body>
 </html>

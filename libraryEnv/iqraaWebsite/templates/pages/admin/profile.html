@@ -5,7 +5,8 @@ profile.html
 <html lang="en"> 
  <head> 
   <meta charset="UTF-8" /> 
-  <link rel="stylesheet" href="../../user/css-files/profile.css" /> 
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/userPages/profile.css' %}" /> 
   <title>Profile</title> 
  
   <style></style> 
@@ -25,7 +26,7 @@ profile.html
    <div class="profile-container"> 
     <h2 class="lbl">User Profile</h2> 
     <div class="profile-photo"> 
-     <img src="../../images/profile1.jpg" alt="Profile Photo" /> 
+     <img src="{% static 'image/profile1.jpg' %}" alt="Profile Photo" /> 
     </div> 
     <div class="form-group"> 
      <label class="lbl" for="username">Username:</label> 
@@ -50,12 +51,12 @@ profile.html
      /> 
     </div> 
     <div class="links-container"> 
-     <a href="changePassword.html">Change Password</a> 
+     <a href="{% url 'adminChangePassword' %}">Change Password</a> 
     </div> 
    </div> 
  
   </div> 
-  <script src="../../user/java-files/profile.js"></script> 
+  <script src="{% static 'js/userPages/profile.js' %}"></script> 
  </body> 
 </html> 
  
