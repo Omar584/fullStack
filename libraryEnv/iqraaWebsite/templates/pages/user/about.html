@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css-files/about.css">
+    <title>About The Store</title>
+</head>
+<body>
+    <div class = "mainPage">
+        <nav>
+            <ul>
+                <li><a href="{% url 'userPage' %}">Home</a></li>
+                <li><a href="{% url 'userBooks' %}">Books</a>
+                <li><a href="{% url 'contact' %}">Contact</a>
+                <li><a href="{% url 'about' %}">About</a>
+                <li><a href="{% url 'profile' %}">Profile</a>        
+            </ul>
+        </nav>
+        <div class = "container">
+            <p>
+                About Iqra'a <br><br>
+                We're currently working on
+                a project for a student-focused
+                bookstore. Please note that this 
+                isn't an operational bookstore,
+                 and you won't find any books
+                 available for purchase here.
+                herefore, kindly refrain
+                from contacting us for book purchases.<br>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

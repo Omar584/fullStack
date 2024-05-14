@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/userPages/bookList.css' %}">
+    <title>Books</title>
+</head>
+<body>
+    <div class =  "mainPage">
+        <nav>
+            <ul>
+                <li><a href="{% url 'userPage' %}">Home</a></li>
+                <li><a href="{% url 'userBooks' %}">Books</a>
+                <li><a href="{% url 'contact' %}">Contact</a>
+                <li><a href="{% url 'about' %}">About</a>
+                <li><a href="{% url 'profile' %}">Profile</a>
+                <li><input class="search" type="text" placeholder="Search...">
+                    <input type="submit" value = "search"></li>
+            </ul>
+        </nav>
+        <div class = "mainContainer">
+            <div class = "imageContainer">
+                <a href="bookDescription/richDad.html">
+                <img src="../../images/richDadPoorDad.jpg" alt="Rich Dad Poor Dad">
+                <div class="bName">Rich Dad Poor Dad</div>
+                </a>  
+            </div>   
+        </div>
+    </div>
+</body>
+</html>
