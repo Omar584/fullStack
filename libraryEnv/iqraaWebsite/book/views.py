@@ -2,6 +2,6 @@ from django.shortcuts import render
 from .models import Book
 
 
-def books(request):
+def allBooks(request):
     inventorybooks = Book.objects.all() 
-    return render(request , 'pages/main/bookList.html' , {'allbooks' : inventorybooks})
+    return render(request , 'pages/Books.html' , {'allbooks' : inventorybooks})
