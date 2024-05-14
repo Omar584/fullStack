@@ -20,12 +20,14 @@
             </ul>
         </nav>
         <div class = "mainContainer">
-            <div class = "imageContainer">
-                <a href="bookDescription/richDad.html">
-                <img src="../../images/richDadPoorDad.jpg" alt="Rich Dad Poor Dad">
-                <div class="bName">Rich Dad Poor Dad</div>
-                </a>  
-            </div>   
+            {% for book in books %}
+                <div class = "imageContainer">
+                    <a href="l">
+                        <img src="{{book.image.url}}" alt="{{book.name}}">
+                        <div class="bName">{{book.name}}</div>
+                    </a>  
+                </div>  
+            {% endfor %} 
         </div>
     </div>
 </body>
