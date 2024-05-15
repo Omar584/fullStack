@@ -5,7 +5,12 @@ def userPage(request):
     return render(request , 'pages/user/userPage.html')
 
 def userBooks(request):
-    inventoryBooks = Book.objects.all()
+    if 'search' in request.GET:
+        query = request.GET['search']
+        inventoryBooks = Book.objects.filter(name__icontains=query)
+    else:
+        inventoryBooks = Book.objects.all() 
+        
     return render(request , 'pages/user/bookList.html' , {'books' : inventoryBooks})
 
 def userAbout(request):

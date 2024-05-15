@@ -3,5 +3,12 @@ from .models import Book
 
 
 def allBooks(request):
-    inventorybooks = Book.objects.all() 
+    if 'search' in request.GET:
+        quary = request.GET['search']
+        inventorybooks = Book.objects.filter(name__icontains=query)
+    else:
+        inventorybooks = Book.objects.all() 
+    
     return render(request , 'pages/Books.html' , {'allbooks' : inventorybooks})
+
+
