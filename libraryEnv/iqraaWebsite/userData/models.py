@@ -8,6 +8,6 @@ class User(models.Model):
     password = models.CharField(max_length = 50)
     email = models.CharField(max_length = 50)
     isAdmin = models.BooleanField(default = False)
-    userImage = models.ImageField('userphotos/%y%m%d')
+    userImage = models.ImageField(upload_to = 'userphotos/%y%m%d')
     address = models.CharField(max_length = 50)
     phoneNumber = models.CharField(max_length = 11)
