@@ -1,5 +1,6 @@
 
 
+<<<<<<< Updated upstream
 function validation() {
         
         var username = document.getElementById('uname').value;
@@ -48,3 +49,42 @@ function validation() {
 =======
 >>>>>>> 0e047f615692777d4ee10bb9bc677f6102e07c93
     }
+=======
+function validation(event) { 
+    var username = document.getElementById('uname').value; 
+    var password = document.getElementById('pass').value; 
+    var confirmPassword = document.getElementById('cpass').value; 
+ 
+    if(username.length < 5) { 
+        document.getElementById('uname').innerHTML = 'Username must be at least 5 characters long.'; 
+        return false; 
+    } 
+ 
+    if(username.includes(' ')) { 
+        document.getElementById('uname').innerHTML = 'Username cannot contain spaces.'; 
+        return false; 
+    } 
+ 
+    if(password.length < 8 ) { 
+        document.getElementById('pass').innerHTML = 'Password must be at least 8 characters long'; 
+        return false; 
+    } 
+ 
+    if( !/\d/.test(password) ) { 
+        document.getElementById('pass').innerHTML = 'Password must contain at least one digit'; 
+        return false; 
+    } 
+ 
+    if( !/[!#$%*@]/.test(password)) { 
+        document.getElementById('pass').innerHTML = 'Please enter one of the following special characters: !, #, $, %, or *'; 
+        return false; 
+    } 
+ 
+    if(password !== confirmPassword) { 
+        document.getElementById('pass').innerHTML = 'Passwords do not match. Please try again.'; 
+        return false; 
+    } 
+ 
+    return true; 
+} 
+>>>>>>> Stashed changes

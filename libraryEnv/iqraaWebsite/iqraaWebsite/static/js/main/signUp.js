@@ -10,31 +10,30 @@ function validation() {
 
         if(username.length < 5) {
             document.getElementById('username').innerHTML = 'Username must be at least 5 characters long.' ;
-            event.preventDefault();
+            event.preventDefault(event) ;
         }
 
         if(username.includes(' ')) {
             document.getElementById('username').innerHTML = 'Username cannot contain spaces.' ;
-            event.preventDefault();
+            return false ;
         }
         if(password.length < 8 ) {
             document.getElementById('password').innerHTML = 'Password must be at least 8 characters long' ;
-            event.preventDefault();
+            return false ;
         }
 
         if( !/\d/.test(password) ) {
             document.getElementById('password').innerHTML = 'password must contain at least one digit ' ;
-            event.preventDefault();
+            return false ;
         }
 
         if( !/[!#$%*@]/.test(password)) {
             document.getElementById('passtest').innerHTML = 'please enter one of the following special characters: !, #, $, %, or *' ;
-            event.preventDefault();
+            return false;
         }
 
         if(password !== confirmPassword) {
             document.getElementById('password').innerHTML = 'Passwords do not match. Please try again.' ;
-            event.preventDefault();
+            return false ;
         }
-
     }
