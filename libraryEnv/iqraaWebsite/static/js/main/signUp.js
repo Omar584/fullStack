@@ -42,22 +42,5 @@ function validation() {
         }
 
         // If validations pass, continue with form submission
-        saveUserInfo(event);
+        // window.location.href = "{% url 'index' %}";
     }
-
-function saveUserInfo() {
-    var username = document.getElementById('uname').value;
-    var password = document.getElementById('pass').value;
-    var email = document.getElementById('em').value;
-    var isAdmin = document.getElementById('is_admin').checked;
-
-    // Save user info to local storage
-    localStorage.setItem('username', username);
-    localStorage.setItem('password', password);
-    localStorage.setItem('email', email);
-    localStorage.setItem('isAdmin', isAdmin ? 'admin' : 'user');
-
-    alert('information saved successfully!');
-    // Redirect to login page if needed
-     window.location.href = '{% url "index" %}';
-}

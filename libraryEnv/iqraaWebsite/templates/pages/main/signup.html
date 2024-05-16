@@ -19,7 +19,7 @@
             </nav>
             <div class = "mainContainer">
                 <h1>SIGN UP</h1>
-                <form method="post" >
+                <form method="post" onsubmit="validation(event)">
                     {% csrf_token %}
                     <div>
                         <label for="uname">Username</label><br>
@@ -45,7 +45,7 @@
                         <input type="submit" value="Submit" id = "submit">
                     </div>
                 </form> 
-                <!-- <script src="{% static 'js/main/signUp.js' %}"></script> -->
+                <script src="{% static 'js/main/signUp.js' %}"></script>
                 
             </div>
         </div>
