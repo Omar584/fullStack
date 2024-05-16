@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Book(models.Model):
-    id = models.IntegerField(primary_key = True)
+    id = models.AutoField(primary_key = True)
     name = models.CharField(max_length = 50)
     author = models.CharField(max_length = 50 , default= 'unknown')
     category = models.CharField(max_length = 30)
@@ -14,4 +14,4 @@ class Book(models.Model):
     def __str__(self):
         return self.name
     class Meta:
-        ordering = ['name']
+        ordering = ['id']

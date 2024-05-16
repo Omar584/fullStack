@@ -10,4 +10,5 @@ urlpatterns = [
     path('about', views.userAbout , name = 'userAbout') ,
     path('profile/' , views.userProfile , name = 'userProfile'),
     path('contact' , views.userContact , name = 'userContact'),
+    path('bookDetails/<int:book_id>/' , views.userBookDetails , name = 'userBookDetails')
 ]

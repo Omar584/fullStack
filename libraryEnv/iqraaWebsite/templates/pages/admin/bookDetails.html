@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/adminpages/bookDescription.css' %}">
+    <title>{{book.name}}</title>
+</head>
+<body>
+    <div class = "mainPage">
+        <nav>
+            <ul>
+                <li><a href="{% url 'adminHome' %}">Home</a>
+                <li><a href="{% url 'adminBooks' %}">Books</a>
+                <li><a href="{% url 'addBookPage' %}">Add-Book</a>
+                <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a> 
+                <li><a href="{% url 'adminProfile' %}l">Profile</a>    
+            </ul>      
+        </nav>
+        <h1 id="name">{{book.name}}</h1>
+
+        <h2 id="author">{{book.author}}</h2>
+
+        <div id = "image">
+            <img src="{{book.image.url}}" alt="{{book.name}}" width="400px">
+        </div>
+
+        <div class = "bookDescription">
+
+            <h2 >Book-ID : <strong id="id">{{book.id}}</strong> </h2>
+
+            <strong id="category">{{book.category}}</strong>
+
+            <div class = "description" id="description">
+                {{book.description}}
+            </div>
+            <div class = "button">
+                <!-- <a href="../../html-files/editBook.html"> -->
+                    <button id="myButton"  onclick="saveBookDetails()"  >Edit Book</button>
+                </a>
+            </div>
+            <div class = "button">
+
+                <button id="myButton" onclick="editBookDetails()" >save Book Edits</button>
+                
+                
+            </div>
+        <!-- <script src="../../java-files/editBook.js"></script> -->
+</body>
+</html>

@@ -22,7 +22,7 @@
         <div class = "mainContainer" id = "mainContainer">
             {% for book in allbooks  %}
                 <div class = "imageContainer" id = "{{book.id}}">
-                    <a href="">
+                    <a href="{% url 'bookDetails' book.id %}">
                         <img src="{{book.image.url}}" alt="{{book.name}}">
                         <div class="bName">{{book.name}}</div>
                     </a>
