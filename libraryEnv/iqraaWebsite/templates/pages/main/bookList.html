@@ -19,9 +19,10 @@
                 <input id="search-button" type="submit" value = "search">
             </ul>
         </nav>
+
         <div class = "mainContainer" id = "mainContainer">
             {% for book in allbooks  %}
-                <div class = "imageContainer" id = "{{book.id}}">
+                <div class = "imageContainer" class = "{{book.id}}">
                     <a href="{% url 'bookDetails' book.id %}">
                         <img src="{{book.image.url}}" alt="{{book.name}}">
                         <div class="bName">{{book.name}}</div>
@@ -31,14 +32,17 @@
         </div> 
     </div>
     <script>
-        document.getElementById('search-button').addEventListener('click',function(){
-            var search = document.getElementById('search-input').value;
-            if(search.trim() !== ''){
-                window.location.href = '{% url "books" %}?search='+encodeURIComponent(search);
+        document.getElementById('search-input').addEventListener('keypress',function(){
+            if(event.key === 'Enter'){
+                var search = document.getElementById('search-input').value;
+                if(search.trim() !== ''){
+                    window.location.href = '{% url "books" %}?search='+encodeURIComponent(search);
+                }
+                else{
+                    window.location.href = '{% url "books" %}';
+                }
             }
-            else{
-                window.location.href = '{% url "books" %}';
-            }
+            
         });
     </script>
 </body>
