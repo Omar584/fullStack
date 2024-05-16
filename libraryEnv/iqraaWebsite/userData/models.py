@@ -9,9 +9,9 @@ class User(models.Model):
     email = models.CharField(max_length = 50)
     isAdmin = models.BooleanField(default = False)
     userImage = models.ImageField(upload_to = 'userphotos/%y%m%d',default = 'userphotos/240515/profile1.jpg')
-    address = models.CharField(max_length = 50)
-    phoneNumber = models.CharField(max_length = 11)
-    books = models.ManyToManyField(Book,null = True)
+    address = models.CharField(max_length = 50,null = True,blank = True)
+    phoneNumber = models.CharField(max_length = 11,null = True,blank = True)
+    books = models.ManyToManyField(Book)
     def __str__(self):
         return self.username
     

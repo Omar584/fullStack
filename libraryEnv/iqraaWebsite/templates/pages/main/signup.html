@@ -19,7 +19,8 @@
             </nav>
             <div class = "mainContainer">
                 <h1>SIGN UP</h1>
-                <form onsubmit="validation(event)">
+                <form method="post" >
+                    {% csrf_token %}
                     <div>
                         <label for="uname">Username</label><br>
                         <input type="text" id="uname" name="uname" required ><br><br>
@@ -37,15 +38,15 @@
                         <input type="email" id="em" name="em" required><br><br>
                     </div> 
                     <div class = "checkbox">
-                        <input type="checkbox" id="is_admin" name="is_admin" value="1" >
+                        <input type="checkbox" id="is_admin" name="is_admin" value="1">
                         <label for="is_admin">is_admin</label>
                     </div>
                     <div class = "submit">
                         <input type="submit" value="Submit" id = "submit">
                     </div>
                 </form> 
+                <!-- <script src="{% static 'js/main/signUp.js' %}"></script> -->
                 
-                <script src="{% static 'js/main/signUp.js' %}"></script>
             </div>
         </div>
         
