@@ -59,5 +59,5 @@ function saveUserInfo() {
 
     alert('information saved successfully!');
     // Redirect to login page if needed
-     window.location.href = '../../../web-project/index.html';
+     window.location.href = "{% url 'index' %}";
 }

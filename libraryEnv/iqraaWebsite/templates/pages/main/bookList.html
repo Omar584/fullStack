@@ -14,9 +14,9 @@
                 <li><a href="{% url 'books' %}">Books</a>
                 <li><a href="{% url 'about' %}">About</a> 
                 <li><a href="{% url 'contact' %}">Contact</a>       
-                <li><input type="text" placeholder = "Search..."
+                <li><input id="search-input" type="text" placeholder = "Search..."
                      style = "border-radius: 4em ; padding : 0.5em">
-                <input type="submit" value = "search">
+                <input id="search-button" type="submit" value = "search">
             </ul>
         </nav>
         <div class = "mainContainer" id = "mainContainer">
@@ -30,5 +30,16 @@
             {% endfor %}
         </div> 
     </div>
+    <script>
+        document.getElementById('search-button').addEventListener('click',function(){
+            var search = document.getElementById('search-input').value;
+            if(search.trim() !== ''){
+                window.location.href = '{% url "books" %}?search='+encodeURIComponent(search);
+            }
+            else{
+                window.location.href = '{% url "books" %}';
+            }
+        });
+    </script>
 </body>
 </html>

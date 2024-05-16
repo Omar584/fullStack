@@ -15,7 +15,10 @@
                 <li><a href="{% url 'adminBooks' %}">Books</a>
                 <li><a href="{% url 'addBookPage'  %}">Add-Book</a>
                 <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a> 
-                <li><a href="{% url 'adminProfile'  %}">Profile</a>    
+                <li><a href="{% url 'adminProfile'  %}">Profile</a> 
+                <li><input id="search-input" type="text" placeholder = "Search..."
+                    style = "border-radius: 4em ; padding : 0.5em">
+                <input id="search-button" type="submit" value = "search"></li>
             </ul>      
         </nav>
 
@@ -42,5 +45,16 @@
 
     </div>
     <script src="{% static 'js/adminpages/bookList.js' %}"></script>
+    <script>
+        document.getElementById('search-button').addEventListener('click',function(){
+            var search = document.getElementById('search-input').value;
+            if(search.trim() !== ''){
+                window.location.href = '{% url "adminBooks" %}?search='+encodeURIComponent(search);
+            }
+            else{
+                window.location.href = '{% url "adminBooks" %}';
+            }
+        });
+    </script>
 </body>
 </html>

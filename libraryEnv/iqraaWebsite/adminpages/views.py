@@ -5,7 +5,13 @@ def adminHome(request):
     return render(request , 'pages/admin/adminPage.html')
 
 def adminBooks(request):
-    return render(request , 'pages/admin/bookList.html', {'allbooks':Book.objects.all()})
+    if 'search' in request.GET:
+        query = request.GET['search']
+        inventoryBooks = Book.objects.filter(name__icontains=query)
+    else:
+        inventoryBooks = Book.objects.all() 
+
+    return render(request , 'pages/admin/bookList.html', {'allbooks':inventoryBooks})
 
 def adminProfile(request):
     return render(request , 'pages/admin/profile.html')
