@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , get_object_or_404
 from book.models import Book
 
 def index(request):
@@ -20,5 +20,9 @@ def about(request):
 
 def signup(request):
     return render(request,'pages/main/signup.html')
+
+def book_details(request , book_id):
+    book = get_object_or_404(Book , id = book_id)
+    return render(request ,'pages/main/bookDetails.html' , {'book' : book})
 
 
