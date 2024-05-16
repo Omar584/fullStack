@@ -20,6 +20,7 @@ def about(request):
     return render(request,'pages/main/about.html')
 
 def signup(request):
+
     if request.method == 'POST':
         username = request.POST.get('uname')
         passowrd = request.POST.get('pass')
