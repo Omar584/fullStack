@@ -20,17 +20,6 @@
                     style = "border-radius: 4em ; padding : 0.5em">
             </ul>      
         </nav>
-
-        <div class = "buttons">
-            <div class = "adminButtons">
-                <input type="button" value="Add-Book" id="addButton" class = "bbb">
-            </div>
-            
-            <div class = "adminButtons">
-                <input class="bbb" type="button" id="deleteButton" value ="Delete-Book">
-            </div>
-        </div>
-
         <div class = "mainContainer" id = "mainContainer">
             {% for book in allbooks  %}
                 <div class = "imageContainer" id = "{{book.id}}">
