@@ -1,5 +1,6 @@
-from django.shortcuts import render , get_object_or_404
+from django.shortcuts import render , get_object_or_404,redirect
 from book.models import Book
+from userData.models import User
 
 def userPage(request):
     return render(request , 'pages/user/userPage.html')
@@ -20,7 +21,18 @@ def userContact(request):
     return render(request , 'pages/user/contact.html')
 
 def userProfile(request):
-    return render(request , 'pages/user/profile.html')
+    user = request.session.get('username')
+    if user is not None:
+        ud = User.objects.get(pk=user)
+        if request.method == 'POST':
+            address = request.POST.get('Address')
+            phone = request.POST.get('phone')
+            ud.address = address
+            ud.phoneNumber = phone
+            ud.save()
+        return render(request , 'pages/user/profile.html',{'data':ud})
+    else:
+        return redirect('index')
 
 def userChangePassword(request):
     return render(request , 'pages/user/changePassword.html')

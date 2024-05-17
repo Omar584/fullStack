@@ -19,34 +19,69 @@
                 <li><a href="{% url 'userProfile' %}">Profile</a> 
             </ul> 
         </nav> 
- 
+        <script>
+            function x(event) {
+                let char = String.fromCharCode(event.which);
+                if (!(/[0-9]/.test(char))) {
+                    alert('invalid phone number')
+                    event.preventDefault();
+                }
+            }
+        </script>
         <div class="profile-container"> 
             <h2 class="lbl">User Profile</h2> 
             <div class="profile-photo"> 
-                <img src="{% static 'image/profile1.jpg' %}" alt="Profile Photo" /> 
+                <img src="{{data.userImage.url}}" alt="Profile Photo" /> 
             </div> 
             <div class="form-group"> 
+                <form method="post" >
+                    {% csrf_token %}
                 <label class="lbl" for="username">Username:</label> 
-            <input 
-                type="text" 
-                id="username" 
-                name="username" 
-                value="" 
-                placeholder="Enter your username" 
-                disabled 
-            /> 
-        </div> 
-        <div class="form-group"> 
-            <label class="lbl" for="email">Email:</label> 
-            <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                value="" 
-                placeholder="Enter your email" 
-                disabled 
-            /> 
-        </div> 
+                <input 
+                 type="text" 
+                 id="username" 
+                 name="username" 
+                 value="{{data.username}}" 
+                 placeholder="Enter your username" 
+                 disabled 
+                /> 
+               </div>
+               <div class="form-group"> 
+                <label class="lbl" for="email">Email:</label> 
+                <input 
+                 type="email" 
+                 id="email" 
+                 name="email" 
+                 value="{{data.email}}" 
+                 placeholder="Enter your email" 
+                 disabled 
+                /> 
+               </div>
+               <div class="form-group"> 
+                   <label class="lbl" for="Address">Address:</label> 
+                   <input 
+                    type="text" 
+                    id="Address" 
+                    name="Address" 
+                    value="{{data.address}}" 
+                    placeholder="Enter your Address" 
+                   /> 
+                  </div> 
+                  <div class="form-group"> 
+                   <label class="lbl" for="phone">phone:</label> 
+                   <input 
+                    type="text" 
+                    id="phone" 
+                    name="phone" 
+                    value="{{data.phoneNumber}}" 
+                    placeholder="Enter your phone"
+                    onsubmit="x(event)"
+                   /> 
+                   <div class="links-container"> 
+                       <input type="submit" id="change" name="change" value="modify">
+                   </div> 
+                </form>
+               </div> 
         <div class="links-container"> 
             <a href="{% url 'userChangePassword' %}">Change Password</a> 
         </div> 
@@ -54,7 +89,6 @@
  
     <a href="{% url 'borrowedBooks' %}" class="borrowed">Borrowed Books</a> 
   </div> 
-  <script src="{% static 'js/userPages/profile.js' %}"></script> 
  </body> 
 </html> 
  

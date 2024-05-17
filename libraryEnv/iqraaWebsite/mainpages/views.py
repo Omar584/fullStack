@@ -11,19 +11,15 @@ def index(request):
         if user is not None:
             request.session['username'] = user.pk
             messages.success(request, f'Welcome, {un}!')
-            return redirect('userBooks')
+            user = request.session.get('username')
+            ud = User.objects.get(pk=user)
+            if ud.isAdmin:
+                return redirect('adminHome')
+            else:
+                return redirect('userPage')
         else:
             messages.error(request, 'Invalid username or password')
     return render(request,'pages/main/index.html')
-
-
-
-
-
-
-
-
-
 
 def books(request):
     if 'search' in request.GET:
