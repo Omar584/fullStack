@@ -1,9 +1,29 @@
-from django.shortcuts import render , get_object_or_404
+from django.shortcuts import render , get_object_or_404 , redirect
 from book.models import Book
 from userData.models import User
+from django.contrib import messages
 
 def index(request):
+    if request.method == 'POST':
+        un = request.POST.get('uname')
+        pas = request.POST.get('password')
+        user = User.objects.filter(username=un,password=pas).first()
+        if user is not None:
+            request.session['username'] = user.pk
+            messages.success(request, f'Welcome, {un}!')
+            return redirect('userBooks')
+        else:
+            messages.error(request, 'Invalid username or password')
     return render(request,'pages/main/index.html')
+
+
+
+
+
+
+
+
+
 
 def books(request):
     if 'search' in request.GET:

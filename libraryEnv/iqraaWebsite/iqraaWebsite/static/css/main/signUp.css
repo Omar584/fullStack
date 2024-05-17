@@ -10,7 +10,7 @@ body{
     font-style: normal;
     background: rgb(0,0,0);
     background: linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.691841702501313) 55%, 
-    rgba(255,255,255,0) 100%), url(../../images/mainPhoto.jpg);
+    rgba(255,255,255,0) 100%), url('../../image/mainPhoto.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -126,4 +126,8 @@ h1 {
   background-color: #804e38;
   box-shadow: 0px 4px antiquewhite;
   transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#uname{
+  padding : 1e 
 }
