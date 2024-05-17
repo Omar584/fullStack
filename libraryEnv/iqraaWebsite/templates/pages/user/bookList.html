@@ -15,8 +15,8 @@
                 <li><a href="{% url 'userContact' %}">Contact</a>
                 <li><a href="{% url 'userAbout' %}">About</a>
                 <li><a href="{% url 'userProfile' %}">Profile</a>
-                <li><input id="search-input" class="search" type="text" placeholder="Search...">
-                    <input id="search-button" type="submit" value = "search"></li>
+                <li><input id="search-input" class="search" type="text" placeholder="Search..."
+                    style = "border-radius: 4em ; padding : 0.5em">
             </ul>
         </nav>
         <div class = "mainContainer">
@@ -31,14 +31,17 @@
         </div>
     </div>
     <script>
-        document.getElementById('search-button').addEventListener('click',function(){
-            var search = document.getElementById('search-input').value;
-            if(search.trim() !== ''){
-                window.location.href = '{% url "userBooks" %}?search='+encodeURIComponent(search);
+        document.getElementById('search-input').addEventListener('keypress',function(){
+            if(event.key === 'Enter'){
+                var search = document.getElementById('search-input').value;
+                if(search.trim() !== ''){
+                    window.location.href = '{% url "books" %}?search='+encodeURIComponent(search);
+                }
+                else{
+                    window.location.href = '{% url "books" %}';
+                }
             }
-            else{
-                window.location.href = '{% url "userBooks" %}';
-            }
+            
         });
     </script>
 </body>
