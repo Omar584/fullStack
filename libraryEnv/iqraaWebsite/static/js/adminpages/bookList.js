@@ -1,4 +1,3 @@
-// scripts.js
 document.addEventListener('DOMContentLoaded', () => {
     const addBookBtn = document.getElementById('addBookBtn');
     const addBookModal = document.getElementById('addBookModal');
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         // Add your form submission logic here
 
-        // For example, adding a new book to the book list
+        // For example, adding a new book 
         const name = document.getElementById('name').value;
         const category = document.getElementById('category').value;
         const author = document.getElementById('author').value;
