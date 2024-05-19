@@ -27,8 +27,10 @@ def userProfile(request):
         if request.method == 'POST':
             address = request.POST.get('Address')
             phone = request.POST.get('phone')
+            image = request.POST.get('addimage')
             ud.address = address
             ud.phoneNumber = phone
+            ud.userImage = image
             ud.save()
         return render(request , 'pages/user/profile.html',{'data':ud})
     else:

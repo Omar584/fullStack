@@ -21,9 +21,9 @@
         </nav> 
         <script>
             function x(event) {
-                let char = String.fromCharCode(event.which);
-                if (!(/[0-9]/.test(char))) {
-                    alert('invalid phone number')
+                let phone = document.getElementById('phone').value
+                if (!(/[0-9]/.test(phone))) {
+                    alert('invalid phone number');
                     event.preventDefault();
                 }
             }
@@ -36,6 +36,9 @@
             <div class="form-group"> 
                 <form method="post" >
                     {% csrf_token %}
+
+                    <div> <input id="addimage" type="file" name="image" accept="image/*" hidden>
+                        <label for="addimage" class="lbl">Add Image</label>          </div>
                 <label class="lbl" for="username">Username:</label> 
                 <input 
                  type="text" 
@@ -71,11 +74,7 @@
                    <label class="lbl" for="phone">phone:</label> 
                    <input 
                     type="text" 
-                    id="phone" 
-                    name="phone" 
-                    value="{{data.phoneNumber}}" 
-                    placeholder="Enter your phone"
-                    onsubmit="x(event)"
+                    id="phone"  name="phone" value="{{data.phoneNumber}}" placeholder="Enter your phone" onsubmit=x(event)
                    /> 
                    <div class="links-container"> 
                        <input type="submit" id="change" name="change" value="modify">
@@ -92,94 +91,3 @@
  </body> 
 </html> 
  
-<!-- <form> 
-                <div class="imageContainer"> 
-                    <div> 
-                        <img src="../../images/profile.jpg" alt="no image" /> 
-                        <br /><br /> 
-                    </div> 
-                    <div> 
-                        <label class="image" for="changeImage" 
-                            >upload photo</label 
-                        > 
-                        <input 
-                            type="file" 
-                            accept="image/*" 
-                            id="changeImage" 
-                            value="profileImage" 
-                        /> 
-                        <br /><br /> 
-                    </div> 
-                </div> 
-                <div class="all"> 
-                    <div> 
-                        <label for="fname">First Name</label> 
-                        <label 
-                            style="position: relative; left: 13em" 
-                            for="Lname" 
-                            >Last name</label 
-                        ><br /> 
-                        <input type="text" id="fname" name="fname" /> 
-                        <input 
-                            style="position: relative; left: 7em" 
-                            type="text" 
-                            id="Lname" 
-                            name="Lname" 
-                        /> 
-                        <br /><br /> 
-                    </div> 
-                    <div> 
-                        <label for="country">Country</label> 
-                        <label 
-                            style="position: relative; left: 14em" 
-                            for="address" 
-                            >address</label 
-                        ><br /> 
-                        <input type="text" id="country" name="country" /> 
-                        <input 
-                            style="position: relative; left: 7em" 
-                            type="address" 
-                            id="address" 
-                            name="address" 
-                        /> 
-                        <br /><br /> 
-                    </div> 
-                    <div> 
-                        <label for="phone">Phone</label> 
-                        <label 
-                            style="position: relative; left: 15em" 
-                            for="email" 
-                            >Email</label 
-                        ><br /> 
-                        <input type="text" id="phone" name="phone" />
-
-Ziad Etman FCAI, [4/21/2024 9:48 PM]
-<input 
-                            style="position: relative; left: 7em" 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                        /> 
-                        <br /><br /> 
-                    </div> 
- 
-                    <div> 
-                        <input type="submit" value="Save" /> 
-                    </div> 
-                </div> 
-            </form> --> 
- 
-<!-- <div class="links"> 
-    <ul> 
-     <li> 
-      <a class="fn" href="changePassword.html" 
-       >change Password</a 
-      > 
-     </li> 
-     <li> 
-      <a class="fn" href="borrowedBooks.html" 
-       >borrowed books</a 
-      > 
-     </li> 
-    </ul> 
-   </div> -->

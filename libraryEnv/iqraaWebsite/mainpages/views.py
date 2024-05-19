@@ -44,7 +44,7 @@ def signup(request):
         isAdmin = request.POST.get('is_admin') == '1'
         data = User(username = username,password=passowrd,email=email,isAdmin=isAdmin)
         data.save()
-        # return render(request,'pages/main/index.html')
+        return redirect('index')
         
     return render(request,'pages/main/signup.html')
 
