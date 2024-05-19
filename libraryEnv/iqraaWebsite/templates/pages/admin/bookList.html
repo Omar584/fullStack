@@ -8,32 +8,22 @@
     <title>Books</title>
 </head>
 <body>
-    <div class =  "mainPage">
+    <div class="mainPage">
         <nav>
             <ul>
-                <li><a href="{% url 'adminHome' %}">Home</a>
-                <li><a href="{% url 'adminBooks' %}">Books</a>
-                <li><a href="{% url 'addBookPage'  %}">Add-Book</a>
-                <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a> 
-                <li><a href="{% url 'adminProfile'  %}">Profile</a> 
-                <li><input id="search-input" type="text" placeholder = "Search..."
-                    style = "border-radius: 4em ; padding : 0.5em">
+                <li><a href="{% url 'adminHome' %}">Home</a></li>
+                <li><a href="{% url 'adminBooks' %}">Books</a></li>
+                <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a></li> 
+                <li><a href="{% url 'adminProfile' %}">Profile</a></li>
+                <li>
+                    <input id="search-input" type="text" placeholder="Search..." style="border-radius: 4em; padding: 0.5em">
+                </li>
             </ul>      
         </nav>
-
-        <div class = "buttons">
-            <div class = "adminButtons">
-                <input type="button" value="Add-Book" id="addButton" class = "bbb">
-            </div>
-            
-            <div class = "adminButtons">
-                <input class="bbb" type="button" id="deleteButton" value ="Delete-Book">
-            </div>
-        </div>
-
-        <div class = "mainContainer" id = "mainContainer">
-            {% for book in allbooks  %}
-                <div class = "imageContainer" id = "{{book.id}}">
+        <button id="addBookBtn">Add Book</button>
+        <div class="mainContainer" id="mainContainer">
+            {% for book in allbooks %}
+                <div class="imageContainer" id="{{book.id}}">
                     <a href="{% url 'adminBookDetails' book.id %}">
                         <img src="{{book.image.url}}" alt="{{book.name}}">
                         <div class="bName">{{book.name}}</div>
@@ -41,21 +31,41 @@
                 </div>
             {% endfor %}
         </div> 
-
+        <div id="addBookModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <form id="addBookForm">
+                    <h2>Add a New Book</h2>
+    
+                    <input type="text" id="name" placeholder="Enter Book Name" name="name" required><br><br>
+    
+                    <input type="text" id="category" placeholder="Enter Book Category" name="category" required><br><br>
+    
+                    <input type="text" id="author" placeholder="Enter Book Author" name="author" required><br><br>
+    
+                    <input type="text" id="price" placeholder="Enter Book Price" name="price" required><br><br>
+    
+                    <textarea id="description" placeholder="Enter Book Description" rows="4" cols="50" required></textarea><br><br>
+    
+                    <input type="file" id="bookImage" required><br><br>
+    
+                    <button type="submit">Add Book</button>
+                    <button type="button" id="cancelBtn">Cancel</button>
+                </form>
+            </div>
+        </div>
     </div>
     <script src="{% static 'js/adminpages/bookList.js' %}"></script>
     <script>
-        document.getElementById('search-input').addEventListener('keypress',function(){
+        document.getElementById('search-input').addEventListener('keypress', function(event){
             if(event.key === 'Enter'){
                 var search = document.getElementById('search-input').value;
                 if(search.trim() !== ''){
-                    window.location.href = '{% url "books" %}?search='+encodeURIComponent(search);
-                }
-                else{
+                    window.location.href = '{% url "books" %}?search=' + encodeURIComponent(search);
+                } else {
                     window.location.href = '{% url "books" %}';
                 }
             }
-            
         });
     </script>
 </body>

@@ -12,7 +12,6 @@
             <ul>
                 <li><a href="{% url 'adminHome' %}">Home</a>
                 <li><a href="{% url 'adminBooks' %}">Books</a>
-                <li><a href="{% url 'addBookPage' %}">Add-Book</a>
                 <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a> 
                 <li><a href="{% url 'adminProfile' %}l">Profile</a>    
             </ul>      
@@ -34,17 +33,14 @@
             <div class = "description" id="description">
                 {{book.description}}
             </div>
-            <div class = "button">
-                <!-- <a href="../../html-files/editBook.html"> -->
-                    <button id="myButton"  onclick="saveBookDetails()"  >Edit Book</button>
+
+            <div class="button">
+                <a href="{% url 'editBookPage' book.id %}">
+                    <button id="myButton">Edit Book</button>
                 </a>
             </div>
-            <div class = "button">
 
-                <button id="myButton" onclick="editBookDetails()" >save Book Edits</button>
-                
-                
-            </div>
+            
         <!-- <script src="../../java-files/editBook.js"></script> -->
 </body>
 </html>

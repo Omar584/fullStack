@@ -14,38 +14,21 @@
                 <!-- Home page -->
                 <li><a href="{% url 'adminHome' %}">Home</a>
                 <li><a href="{% url 'adminBooks' %}">Books</a>
-                <li><a href="{% url 'addBookPage'  %}">Add-Book</a>
                 <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a> 
                 <li><a href="{% url 'adminProfile'  %}">Profile</a>    
             </ul>      
         </nav>
         <h1>Edit-Book</h1>
-        <div class = "button">
-                <button onclick="showBookDetails()" >show book details</button>
-        </div>
-        <form id ="addBookForm" onsubmit="saveEditBookDetails()">
-            <label for="book_id">Edit Book ID</label><br>
-            <input type="text" id="book_id" value='' required><br>
-    
-            <label for="book_name">Edit Book Name</label><br>
-            <input type="text" id="book_name"  value='' required><br>
-    
-            <label for="author">Edit Author Name</label><br>
-            <input type="text" id="author" value=''  required><br>
-    
-            <label for="category">Edit Category</label><br>
-            <input type="text" id="category" value=''  required><br>
-    
-            <label for="description">Edit Description</label><br>
-            <textarea id="description" rows="4" cols="50"  value='' required></textarea><br>
-            
-            <input class="submit" type="submit" value="Save changes" id="addDelete">
-
-            
-            
+        
+        <form method="post">
+            {% csrf_token %}
+            <!--form.as_p means the form-->
+            {{ form.as_p }}
+            <input type="submit" value="Save Changes">
         </form>
+
     </div>
-    <script src="{% static 'js/adminpages/editBook.js' %}"></script>
+   <!--<script src="{% static 'js/adminpages/editBook.js' %}"></script>>--> 
     <br>
     <br>
     <br>
