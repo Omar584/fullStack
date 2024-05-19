@@ -1,7 +1,9 @@
 from django.shortcuts import render , get_object_or_404
+from django.shortcuts import render , get_object_or_404, redirect
 from book.models import Book
 from userData.models import User
-
+from .forms import BookForm
+from django.contrib import messages
 def adminHome(request):
     return render(request , 'pages/admin/adminPage.html')
 
@@ -33,11 +35,7 @@ def adminProfile(request):
 def addBookPage(request):
     return render(request,'pages/admin/addBook.html')
 
-def deleteBookPage(request):
-    return render(request, 'pages/admin/deleteBook.html')
 
-def editBookPage(request):
-    return render(request , 'pages/admin/editBook.html')
 
 def adminChangePassword(request):
     return render(request , 'pages/admin/changePassword.html')
@@ -47,4 +45,28 @@ def adminBookDetails(request , book_id):
     return render(request , 'pages/admin/bookDetails.html' , {'book' : book})
 
 
+
+
+def edit_book(request, book_id):
+    book = Book.objects.get(id=book_id)
+    if request.method == 'POST':
+        form = BookForm(request.POST, instance=book)
+        if form.is_valid():
+            form.save()
+            return  render(request , 'pages/admin/bookDetails.html' , {'book' : book})  
+    else:
+        form = BookForm(instance=book)
+    
+    return render(request, 'pages/admin/editBook.html', {'form': form})
+
+
+
+def delete_book(request):
+    book_id = request.POST.get('book_id')
+    try:
+        book = Book.objects.get(id=book_id)
+        book.delete()
+        return render(request, 'pages/admin/deleteBook.html') 
+    except Book.DoesNotExist:
+        return render(request, 'pages/admin/deleteBook.html')
 
