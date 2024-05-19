@@ -39,13 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const price = document.getElementById('price').value;
         const description = document.getElementById('description').value;
 
-        const bookList = document.getElementById('bookList');
-        const newBook = document.createElement('div');
-        newBook.innerHTML = `<strong>${name}</strong> by ${author} - ${category} - $${price}<br>${description}`;
-        bookList.appendChild(newBook);
-
-        // Clear the form and close the modal
-        document.getElementById('addBookForm').reset();
-        addBookModal.style.display = 'none';
+        
     });
 });
