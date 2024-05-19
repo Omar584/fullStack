@@ -4,8 +4,6 @@ document.getElementById('bookForm').addEventListener('submit', function(event) {
     // Prevent the default form submission action, which typically refreshes the page.
     event.preventDefault();
 
-    // Retrieve the value of the book ID from the input field with the ID 'bookId'.
-    const bookId = document.getElementById('bookId').value;
     // Retrieve the value of the book name from the input field with the ID 'bookName'.
     const bookName = document.getElementById('bookName').value;
     // Retrieve the value of the book category from the input field with the ID 'category'.
@@ -48,7 +46,7 @@ document.getElementById('bookForm').addEventListener('submit', function(event) {
         localStorage.setItem('bookDetails', JSON.stringify(BookDetails));
 
         // Notify the user that the book details were saved successfully.
-        alert('Book details saved successfully! go to Books and click Add-Book');
+        alert('Book is added successfully!');
         // Redirect the user to 'bookList.html' after successful storage.
     };
 

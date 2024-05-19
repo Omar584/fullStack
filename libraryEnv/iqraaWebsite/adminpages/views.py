@@ -17,7 +17,7 @@ def adminBooks(request):
     return render(request , 'pages/admin/bookList.html', {'allbooks':inventoryBooks})
 
 def adminProfile(request):
-    uuser = request.session.get('username')
+    user = request.session.get('username')
     if user is not None:
         ud = User.objects.get(pk=user)
         if request.method == 'POST':
@@ -31,10 +31,6 @@ def adminProfile(request):
         return redirect('index')
 
     
-
-def addBookPage(request):
-    return render(request,'pages/admin/addBook.html')
-
 
 
 def adminChangePassword(request):
