@@ -7,22 +7,8 @@
     <link rel="stylesheet" href="{% static 'css/main/bookList.css' %}">
     <title>Books</title>
     <style>
-        .modal {
-          display: none; /* Hidden by default */
-        }
         .modal-content{
             background-image: url("{% static 'image/addBook.jpg' %}")  ;
-        }
-        .inputForm{
-            border-radius: 20px;
-            height: 30px ;
-        }
-        .inputForm:hover{
-            transform: scale(1.1);
-            transition-duration: 0.3s ;
-        }
-        .h2{
-            color : white ;
         }
     </style>
 </head>
@@ -39,7 +25,10 @@
                 </li>
             </ul>      
         </nav>
-        <button id="addBookBtn">Add Book</button>
+        <div class = "button">
+            <button id="addBookBtn">Add Book</button>
+        </div>
+        
         <div class="mainContainer" id="mainContainer">
             {% for book in allbooks %}
                 <div class="imageContainer" id="{{book.id}}">
@@ -56,20 +45,20 @@
                 <form id="addBookForm">
                     <h2 style="color: white; ">Add a New Book</h2>
     
-                    <input type="text" class = "inputForm" id="name" placeholder="Enter Book Name" name="name" required><br><br>
+                    <input type="text" class = "inputForm" id="name" placeholder="   Enter Book Name" name="name" required><br><br>
     
-                    <input type="text" class = "inputForm" id="category" placeholder="Enter Book Category" name="category" required><br><br>
+                    <input type="text" class = "inputForm" id="category" placeholder="   Enter Book Category" name="category" required><br><br>
     
-                    <input type="text" class = "inputForm" id="author" placeholder="Enter Book Author" name="author" required><br><br>
+                    <input type="text" class = "inputForm" id="author" placeholder="   Enter Book Author" name="author" required><br><br>
     
-                    <input type="text" class = "inputForm" id="price" placeholder="Enter Book Price" name="price" required><br><br>
+                    <input type="text" class = "inputForm" id="price" placeholder="   Enter Book Price" name="price" required><br><br>
     
-                    <textarea class = "inputForm" id="description" placeholder="Enter Book Description" rows="4" cols="50" required></textarea><br><br>
+                    <textarea class = "inputForm" id="description" placeholder="   Enter Book Description" rows="4" cols="50" required></textarea><br><br>
     
                     <input class = "inputForm" type="file" id="bookImage" required><br><br>
     
-                    <button class = "inputForm" type="submit">Add Book</button>
-                    <button class = "inputForm" type="button" id="cancelBtn">Cancel</button>
+                    <button  type="submit">Add Book</button>
+                    <button  type="button" id="cancelBtn">Cancel</button>
                 </form>
             </div>
         </div>
