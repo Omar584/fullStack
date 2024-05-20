@@ -1,5 +1,6 @@
-var buttonn = document.getElementById('myButton') ;
-buttonn.addEventListener('click',redirectToSignIn) ;
-function redirectToSignIn(){
-    window.location.href = '../../../index.html';
-}
+
+
+
+document.getElementById('myButton').addEventListener('click' , function(){
+    window.alert('please sign in first') ;
+});
