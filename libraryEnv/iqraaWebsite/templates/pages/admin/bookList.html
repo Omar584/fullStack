@@ -56,15 +56,15 @@
                 <form id="addBookForm">
                     <h2 style="color: white; ">Add a New Book</h2>
     
-                    <input type="text" class = "inputForm" id="name" placeholder="Enter Book Name" name="name" required><br><br>
+                    <input type="text" class = "inputForm" id="name" placeholder="  Enter Book Name" name="name" required><br><br>
     
-                    <input type="text" class = "inputForm" id="category" placeholder="Enter Book Category" name="category" required><br><br>
+                    <input type="text" class = "inputForm" id="category" placeholder="  Enter Book Category" name="category" required><br><br>
     
-                    <input type="text" class = "inputForm" id="author" placeholder="Enter Book Author" name="author" required><br><br>
+                    <input type="text" class = "inputForm" id="author" placeholder="  Enter Book Author" name="author" required><br><br>
     
-                    <input type="text" class = "inputForm" id="price" placeholder="Enter Book Price" name="price" required><br><br>
+                    <input type="text" class = "inputForm" id="price" placeholder="  Enter Book Price" name="price" required><br><br>
     
-                    <textarea class = "inputForm" id="description" placeholder="Enter Book Description" rows="4" cols="50" required></textarea><br><br>
+                    <textarea class = "inputForm" id="description" placeholder="  Enter Book Description" rows="4" cols="50" required></textarea><br><br>
     
                     <input class = "inputForm" type="file" id="bookImage" required><br><br>
     
@@ -80,9 +80,9 @@
             if(event.key === 'Enter'){
                 var search = document.getElementById('search-input').value;
                 if(search.trim() !== ''){
-                    window.location.href = '{% url "books" %}?search=' + encodeURIComponent(search);
+                    window.location.href = '{% url "adminBooks" %}?search=' + encodeURIComponent(search);
                 } else {
-                    window.location.href = '{% url "books" %}';
+                    window.location.href = '{% url "adminBooks" %}';
                 }
             }
         });

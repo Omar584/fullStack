@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/adminpages/bookDescription.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main/bookDescription.css' %}">
     <title>{{book.name}}</title>
 </head>
 <body>
@@ -16,9 +16,8 @@
                 <li><a href="{% url 'adminProfile' %}l">Profile</a>    
             </ul>      
         </nav>
-        <h1 id="name">{{book.name}}</h1>
+        <h1>{{book.name}} - {{book.author}}</h1>
 
-        <h2 id="author">{{book.author}}</h2>
 
         <div id = "image">
             <img src="{{book.image.url}}" alt="{{book.name}}" width="400px">
@@ -26,9 +25,8 @@
 
         <div class = "bookDescription">
 
-            <h2 >Book-ID : <strong id="id">{{book.id}}</strong> </h2>
-
-            <strong id="category">{{book.category}}</strong>
+            <h2>Book ID: {{book.id}}</h2>
+            <h2><strong>{{book.category}}</strong></h2>
 
             <div class = "description" id="description">
                 {{book.description}}

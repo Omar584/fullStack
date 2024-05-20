@@ -35,10 +35,10 @@
             if(event.key === 'Enter'){
                 var search = document.getElementById('search-input').value;
                 if(search.trim() !== ''){
-                    window.location.href = '{% url "books" %}?search='+encodeURIComponent(search);
+                    window.location.href = '{% url "userBooks" %}?search='+encodeURIComponent(search);
                 }
                 else{
-                    window.location.href = '{% url "books" %}';
+                    window.location.href = '{% url "userBooks" %}';
                 }
             }
             
