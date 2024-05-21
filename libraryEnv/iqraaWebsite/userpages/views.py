@@ -68,11 +68,16 @@ def borrowedbooks(request):
 
 def userBookDetails(request , book_id):
     book = get_object_or_404(Book , id = book_id)
+    isBorrowed = False
     user = request.session.get('username')
     if user:
         if request.method == 'POST':
             userID = request.POST.get('id')
             userDetails = User.objects.get(pk=user)
+            isBorrowed = False
             userDetails.books.add(book)
+            if userDetails.books.filter(id=book_id).exists():
+                isBorrowed = True
             
-    return render(request , 'pages/user/bookDetails.html' , {'book' : book})
+            
+    return render(request , 'pages/user/bookDetails.html' , {'book' : book,'isBorrowed':isBorrowed})
