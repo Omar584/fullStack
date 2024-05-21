@@ -34,13 +34,13 @@
                 <img src="{{data.userImage.url}}" alt="Profile Photo" /> 
             </div> 
             <div class="form-group"> 
-                <form method="post" >
+                <form method="post" enctype="multipart/form-data" >
                     {% csrf_token %}
 
-
-                    
-                    <div> <input id="addimage" type="file" name="image" accept="image/*" hidden>
-                        <label for="addimage" class="lbl">Add Image</label>          </div>
+                    <div> 
+                        <input id="addimage" type="file" name="image" accept="image/*" hidden>
+                        <label for="addimage" class="lbl">Add Image</label>          
+                    </div>
                 <label class="lbl" for="username">Username:</label> 
                 <input 
                  type="text" 

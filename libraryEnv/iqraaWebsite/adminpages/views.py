@@ -23,10 +23,13 @@ def adminProfile(request):
         if request.method == 'POST':
             address = request.POST.get('Address')
             phone = request.POST.get('phone')
-            image = request.POST.get('addimage')
-            ud.address = address
-            ud.phoneNumber = phone
-            ud.userImage = image
+            if 'image' in request.FILES:
+                image = request.FILES['image']
+                ud.userImage = image
+            if address:
+                ud.address = address
+            if phone:
+                ud.phoneNumber = phone
             ud.save()
         return render(request , 'pages/admin/profile.html',{'data':ud})
     else:
