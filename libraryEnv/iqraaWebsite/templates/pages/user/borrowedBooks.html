@@ -20,10 +20,19 @@
         </nav> 
         <h1>Borrowed Books</h1>
         <div id="borrowedBooksContainer">
-            <!-- Existing content or other elements in the container -->
-        </div>
+            {% if books %}
+                
+                    {% for book in books %}
+                    <p>{{ book.name }} by {{ book.author }}</p>
+                    {% endfor %}
+                
+            {% else %}
+                <p>No borrowed books found.</p>
+            {% endif %}
 
-        <script src="{% static 'js/userPages/borrowedBook.js' %}"></script>
+        </div>
+        
+
     </div>
 
 </body>

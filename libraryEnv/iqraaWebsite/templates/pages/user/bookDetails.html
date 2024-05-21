@@ -27,7 +27,12 @@
                 {{book.description}}
             <div>
             <div class = "button">
-                <button id="myButton">Borrow</button>
+                <form method="post">
+                    {% csrf_token %}
+                    <button id="myButton" name="borrow">Borrow</button>
+                    <input type="number" hidden name="id" value="{{book.id}}">
+                </form>
+                
             </div>
         </div>
         <!-- <script src="../../java-files/bookDescription.js"></script> -->

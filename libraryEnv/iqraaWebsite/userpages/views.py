@@ -14,11 +14,17 @@ def userBooks(request):
         
     return render(request , 'pages/user/bookList.html' , {'books' : inventoryBooks})
 
+
+
 def userAbout(request):
     return render(request , 'pages/user/about.html')
 
+
+
 def userContact(request):
     return render(request , 'pages/user/contact.html')
+
+
 
 def userProfile(request):
     user = request.session.get('username')
@@ -39,12 +45,34 @@ def userProfile(request):
     else:
         return redirect('index')
 
+
+
 def userChangePassword(request):
     return render(request , 'pages/user/changePassword.html')
 
+
+
+
 def borrowedbooks(request):
-    return render(request , 'pages/user/borrowedBooks.html')
+
+    username = request.session.get('username')
+    if username:
+        user = get_object_or_404(User,pk = username)
+        books = user.books.all()
+        print("Books associated with user:", books)  
+        return render(request , 'pages/user/borrowedBooks.html',{'books':books})
+    else:
+        return redirect('index')
+
+
 
 def userBookDetails(request , book_id):
     book = get_object_or_404(Book , id = book_id)
+    user = request.session.get('username')
+    if user:
+        if request.method == 'POST':
+            userID = request.POST.get('id')
+            userDetails = User.objects.get(pk=user)
+            userDetails.books.add(book)
+            
     return render(request , 'pages/user/bookDetails.html' , {'book' : book})
