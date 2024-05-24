@@ -90,7 +90,7 @@ def delete_book(request):
     try:
         book = Book.objects.get(id=book_id)
         book.delete()
-        return render(request, 'pages/admin/deleteBook.html') 
+        return redirect("adminBooks") 
     except Book.DoesNotExist:
         return render(request, 'pages/admin/deleteBook.html')
 
