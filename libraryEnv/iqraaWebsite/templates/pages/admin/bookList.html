@@ -18,6 +18,7 @@
             <ul>
                 <li><a href="{% url 'adminHome' %}">Home</a></li>
                 <li><a href="{% url 'adminBooks' %}">Books</a></li>
+                <li><a href="{% url 'addBook' %}">Add-Book</a></li>
                 <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a></li> 
                 <li><a href="{% url 'adminProfile' %}">Profile</a></li>
                 <li>
@@ -25,10 +26,6 @@
                 </li>
             </ul>      
         </nav>
-        <div class = "button">
-            <button id="addBookBtn">Add Book</button>
-        </div>
-        
         <div class="mainContainer" id="mainContainer">
             {% for book in allbooks %}
                 <div class="imageContainer" id="{{book.id}}">
@@ -39,30 +36,6 @@
                 </div>
             {% endfor %}
         </div> 
-        <div id="addBookModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <form id="addBookForm">
-                    <h2 style="color: white; ">Add a New Book</h2>
-    
-
-                    <input type="text" class = "inputForm" id="name" placeholder="   Enter Book Name" name="name" required><br><br>
-    
-                    <input type="text" class = "inputForm" id="category" placeholder="   Enter Book Category" name="category" required><br><br>
-    
-                    <input type="text" class = "inputForm" id="author" placeholder="   Enter Book Author" name="author" required><br><br>
-    
-                    <input type="text" class = "inputForm" id="price" placeholder="   Enter Book Price" name="price" required><br><br>
-    
-                    <textarea class = "inputForm" id="description" placeholder="   Enter Book Description" rows="4" cols="50" required></textarea><br><br>
-    
-                    <input class = "inputForm" type="file" id="bookImage" required><br><br>
-    
-                    <button  type="submit">Add Book</button>
-                    <button  type="button" id="cancelBtn">Cancel</button>
-                </form>
-            </div>
-        </div>
     </div>
     <script src="{% static 'js/adminpages/bookList.js' %}"></script>
     <script>
@@ -76,6 +49,9 @@
                 }
             }
         });
+        document.getElementById('addBookForm').addEventListener('submit' , function(){
+
+        })
     </script>
 </body>
 </html>

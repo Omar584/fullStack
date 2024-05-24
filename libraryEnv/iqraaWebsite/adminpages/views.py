@@ -16,6 +16,29 @@ def adminBooks(request):
 
     return render(request , 'pages/admin/bookList.html', {'allbooks':inventoryBooks})
 
+def addBook(request): 
+    if request.method == 'POST':
+        name = request.POST.get("bookName")
+        author = request.POST.get("bookAuthor")
+        category = request.POST.get("category")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        image = request.FILES.get("bookImage")
+
+        newBook = Book(
+            name = name ,
+            author = author ,
+            category = category ,
+            price = price ,
+            description = description ,
+            image = image 
+        )
+        newBook.save()
+        return redirect("adminBooks")
+    return render(request, 'pages/admin/addBook.html')
+
+
+
 def adminProfile(request):
     user = request.session.get('username')
     if user is not None:
