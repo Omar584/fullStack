@@ -14,6 +14,7 @@
             <ul>
                 <li><a href="{% url 'userPage' %}">Home</a></li>
                 <li><a href="{% url 'userBooks' %}">Books</a>
+                <li><a href="{% url 'borrowedBooks' %}">Borrowed-Books</a>    
                 <li><a href="{% url 'userContact' %}">Contact</a>
                 <li><a href="{% url 'userAbout' %}">About</a>
                 <li><a href="{% url 'userProfile' %}">Profile</a> 
@@ -87,8 +88,6 @@
             <a href="{% url 'userChangePassword' %}">Change Password</a> 
         </div> 
     </div> 
- 
-    <a href="{% url 'borrowedBooks' %}" class="borrowed">Borrowed Books</a> 
   </div> 
  </body> 
 </html> 
