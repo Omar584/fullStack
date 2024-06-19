@@ -10,5 +10,7 @@ urlpatterns = [
     path('about', views.userAbout , name = 'userAbout') ,
     path('profile/' , views.userProfile , name = 'userProfile'),
     path('contact' , views.userContact , name = 'userContact'),
-    path('bookDetails/<int:book_id>/' , views.userBookDetails , name = 'userBookDetails')
+    path('bookDetails/<int:book_id>/' , views.userBookDetails , name = 'userBookDetails'),
+    path('unborrow/<int:book_id>/', views.unborrow_book, name='unborrow_book'),
+    path('logout/', views.custom_logout_view, name='logout'),
 ]

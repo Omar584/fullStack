@@ -25,7 +25,10 @@
                         <a href="">
                             <img src="{{book.image.url}}" alt="{{book.name}}">
                             <div class="bName">{{book.name}}</div>
-                        </a>     
+                        </a> 
+                        <a href="{% url 'unborrow_book' book.id %}">
+                            <button>Un-Borrow</button>  
+                        </a>
                     </div>
                 {% endfor %}       
             {% else %}

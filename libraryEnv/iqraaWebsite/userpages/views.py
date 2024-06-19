@@ -1,6 +1,13 @@
 from django.shortcuts import render , get_object_or_404,redirect
 from book.models import Book
 from userData.models import User
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+def custom_logout_view(request):
+    logout(request)
+    return redirect('index')  # Redirect to the index view in the mainPages app
+
 
 def userPage(request):
     return render(request , 'pages/user/userPage.html')
@@ -64,7 +71,26 @@ def borrowedbooks(request):
     else:
         return redirect('index')
 
+def unborrow_book(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    
+    # Get the username from the session
+    username = request.session.get('username')
+    
+    # Fetch the User object using the username
+    user = get_object_or_404(User, username=username)
+    
+    # Remove the book from the user's borrowed books
+    user.books.remove(book)
+    
+    return redirect('borrowedBooks')  # Redirect to the borrowed books page or another appropriate page
 
+
+
+    # Remove the book from the user's borrowed books
+    user.books.remove(book)
+
+    return redirect('borrowedBooks')  # redirect to the borrowed books page or another appropriate page
 
 def userBookDetails(request , book_id):
     book = get_object_or_404(Book , id = book_id)
