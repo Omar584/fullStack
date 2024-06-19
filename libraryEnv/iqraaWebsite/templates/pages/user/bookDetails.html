@@ -29,13 +29,19 @@
                 {{book.description}}
             <div>
             <div class = "button">
-                <form method="post">
+                <form action="{% url 'borrow_book' book.id %}" method="post" onsubmit="return confirmBorrow() ;">
                     {% csrf_token %}
-                    <button id="myButton" name="borrow">Borrow</button>
-                    <input type="number" hidden name="id" value="{{book.id}}">
+                    <button type="submit" id="myButton">Borrow</button>
                 </form>
-                
             </div>
         </div>
+        <script>
+            function confirmBorrow() {
+                return confirm("Are you sure you want to borrow this book?");
+            }
+            function displayMessage(messages){
+                window.alert(message[messages.length()-1]) ;
+            }
+        </script>
 </body>
 </html>

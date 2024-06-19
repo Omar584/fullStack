@@ -3,6 +3,8 @@ from book.models import Book
 from userData.models import User
 from django.contrib.auth import logout
 from django.shortcuts import redirect
+from django.contrib import messages
+from django.views.decorators.http import require_POST
 
 def custom_logout_view(request):
     logout(request)
@@ -94,16 +96,22 @@ def unborrow_book(request, book_id):
 
 def userBookDetails(request , book_id):
     book = get_object_or_404(Book , id = book_id)
-    isBorrowed = False
-    user = request.session.get('username')
-    if user:
-        if request.method == 'POST':
-            userID = request.POST.get('id')
-            userDetails = User.objects.get(pk=user)
-            isBorrowed = False
-            userDetails.books.add(book)
-            if userDetails.books.filter(id=book_id).exists():
-                isBorrowed = True
-            
-            
-    return render(request , 'pages/user/bookDetails.html' , {'book' : book,'isBorrowed':isBorrowed})
+    return render(request , 'pages/user/bookDetails.html' , {'book' : book})
+
+@require_POST
+def borrow_book(request, book_id):
+    if 'username' not in request.session:
+        messages.error(request, 'You need to be logged in to borrow a book.')
+        return redirect('index')
+
+    book = get_object_or_404(Book, id=book_id)
+    username = request.session.get('username')
+    user = get_object_or_404(User, username=username)
+
+    if book in user.books.all():
+        messages.error(request, 'You have already borrowed this book.')
+    else:
+        user.books.add(book)
+        messages.success(request, f'You have successfully borrowed the book: {book.name}')
+    
+    return redirect('borrowedBooks')
