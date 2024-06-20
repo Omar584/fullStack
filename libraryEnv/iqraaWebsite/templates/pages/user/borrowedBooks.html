@@ -4,20 +4,13 @@
     <meta charset="UTF-8">
     <title>Borrowed Books</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/userPages/bookList.css' %}">
+    <link rel="stylesheet" href="{% static 'css/button.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/userPages/borrowedBooks.css' %}">
 </head>
 <body>
     <div class="mainPage">
-        <nav>
-            <ul>
-                <li><a href="{% url 'userPage' %}">Home</a></li>
-                <li><a href="{% url 'userBooks' %}">Books</a></li>
-                <li><a href="{% url 'borrowedBooks' %}">Borrowed-Books</a></li>
-                <li><a href="{% url 'userContact' %}">Contact</a></li>
-                <li><a href="{% url 'userAbout' %}">About</a></li>
-                <li><a href="{% url 'userProfile' %}">Profile</a></li>   
-            </ul>
-        </nav> 
+        {% include 'pages/user/navBar.html'%}
         <h1>Borrowed-Books</h1>
         <div class="mainContainer">
             {% if books %}
@@ -27,6 +20,8 @@
                             <img src="{{book.image.url}}" alt="{{book.name}}">
                             <div class="bName">{{book.name}}</div>
                         </a> 
+                    </div>
+                    <div class = "unborrowButton">
                         <a href="{% url 'unborrow_book' book.id %}">
                             <button>Un-Borrow</button>  
                         </a>

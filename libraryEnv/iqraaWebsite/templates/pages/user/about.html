@@ -4,21 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
     <title>About The Store</title>
 </head>
 <body>
     <div class = "mainPage">
-        <nav>
-            <ul>
-                <li><a href="{% url 'userPage' %}">Home</a></li>
-                <li><a href="{% url 'userBooks' %}">Books</a>
-                <li><a href="{% url 'borrowedBooks' %}">Borrowed-Books</a>       
-                <li><a href="{% url 'userContact' %}">Contact</a>
-                <li><a href="{% url 'userAbout' %}">About</a>
-                <li><a href="{% url 'userProfile' %}">Profile</a>        
-            </ul>
-        </nav>
+        {% include 'pages/user/navBar.html'%}
         <div class = "container">
             <p>
                 About Iqra'a <br><br>

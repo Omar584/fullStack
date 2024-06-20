@@ -4,19 +4,12 @@
     <meta charset="UTF-8">
     <title>Contact</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
     <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 </head>
 <body>
     <div class="mainPage">
-        <nav>
-            <ul>
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'books' %}">Books</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-            </ul>
-        </nav>
-
+        {% include 'pages/main/navBar.html' %}
         <br><br>
 
         <h1>Contact Iqraa</h1>

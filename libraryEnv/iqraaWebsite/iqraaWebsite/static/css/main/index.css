@@ -20,39 +20,6 @@ body {
     padding: 0 ;
 }
 
-ul{
-  display : flex ;
-  list-style-type: none ;
-  margin-top : 0 ;
-  flex-wrap: wrap ;
-}
-nav{
-  background-color:#ae6b4b ;
-  height : 4em ;
-  width: 100%;
-  box-shadow: 0px 10px #b08e7d;
-}
-
-li{
-  margin : 1.5em ;
-  margin-top : 1em ;
-}
-
-li a {
-  display : block ;
-  text-decoration: none ;
-  padding : auto ;
-  margin-right : 2em ;
-  color : white ;
-  font-size :1.5em;
-}
-
-ul li a:hover{
-  text-decoration:none;
-  color : #AAAAAA ;
-  transition : color 0.1s;
-}
-
 .logo {
   font-size: 50px;
   font-weight: 200;

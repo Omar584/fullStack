@@ -3,19 +3,14 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
     <title>About The Store</title>
 </head>
 <body>
     <div class = "mainPage">
-        <nav>
-            <ul>
-                <li><a href="{% url 'index' %}">Home</a>
-                <li><a href="{% url 'books' %}">Books</a>
-                <li><a href="{% url 'about' %}">About</a> 
-                <li><a href="{% url 'contact' %}">Contact</a>       
-            </ul>
-        </nav>
+        {% include 'pages/main/navBar.html' %}
+
         <div class = "container">
             <p>
                 About Iqra'a <br><br>

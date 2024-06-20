@@ -1,26 +1,15 @@
 <!DOCTYPE html> 
 <html lang="en"> 
- <head> 
-  <meta charset="UTF-8" /> 
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/userPages/profile.css' %}">
-  <title>Profile</title> 
- 
-  <style></style> 
- </head> 
- <body>
+<head>
+    <meta charset="UTF-8" /> 
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/userPages/profile.css' %}">
+    <title>Profile</title>  
+</head> 
+<body>
     <div class="mainPage"> 
-        <nav>
-            <ul>
-                <li><a href="{% url 'userPage' %}">Home</a></li>
-                <li><a href="{% url 'userBooks' %}">Books</a>
-                <li><a href="{% url 'borrowedBooks' %}">Borrowed-Books</a>    
-                <li><a href="{% url 'userContact' %}">Contact</a>
-                <li><a href="{% url 'userAbout' %}">About</a>
-                <li><a href="{% url 'userProfile' %}">Profile</a> 
-                <li><a href="{% url 'logout' %}">Log-Out</a>    
-            </ul> 
-        </nav> 
+        {% include 'pages/user/profileNavBar.html' %}
         <script>
             function x(event) {
                 let phone = document.getElementById('phone').value
@@ -39,7 +28,7 @@
                 <form method="post" enctype="multipart/form-data" >
                     {% csrf_token %}
 
-                    <div> 
+                    <div class = "addImage"> 
                         <input id="addimage" type="file" name="image" accept="image/*" hidden>
                         <label for="addimage" class="lbl">Add Image</label>          
                     </div>
@@ -90,6 +79,6 @@
         </div> 
     </div> 
   </div> 
- </body> 
+</body> 
 </html> 
  

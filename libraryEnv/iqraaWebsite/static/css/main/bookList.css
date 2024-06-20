@@ -22,43 +22,8 @@ body {
     background-repeat: no-repeat;  
 }
 
-
-ul{
-  display : flex ;
-  list-style-type: none ;
-  margin-top : 0 ;
-  flex-wrap: wrap ;
-}
-
 .mainPage{
   width : 100% ;
-}
-
-nav{
-  background-color:#8b553c;
-  width: 100%;
-  margin-bottom: 10px;
-  box-shadow: 0px 7px #bc916c;
-}
-
-li{
-  margin : 1.5em ;
-  margin-top : 1em ;
-}
-
-li a {
-  display : block ;
-  text-decoration: none ;
-  padding : auto ;
-  margin-right : 2em ;
-  color : #f5f5f5 ;
-  font-size :1.5em;
-}
-
-ul li a:hover{
-  text-decoration:none;
-  color : #AAAAAA ;
-  transition : color 0.1s;
 }
 
 .logo {
