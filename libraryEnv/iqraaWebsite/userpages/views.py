@@ -56,6 +56,17 @@ def userProfile(request):
 
 
 def userChangePassword(request):
+    user = request.session.get('username')
+    if user is not None:
+        ud = User.objects.get(pk=user)
+        if request.method == 'POST':
+            oldpass = request.POST.get('oldpassword')
+            newpass1 = request.POST.get('newpassword')
+            newpass2 = request.POST.get('newpassword2')
+            if ud.password == oldpass and newpass1 == newpass2:
+                    ud.password = newpass1
+                    ud.save()
+                    return redirect ('userChangePassword')
     return render(request , 'pages/user/changePassword.html')
 
 

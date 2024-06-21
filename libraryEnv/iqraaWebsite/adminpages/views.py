@@ -69,6 +69,23 @@ def adminProfile(request):
 
 
 def adminChangePassword(request):
+    user = request.session.get('username')
+    if user is not None:
+        ud = User.objects.get(pk=user)
+        if request.method == 'POST':
+            oldpass = request.POST.get('oldpassword')
+            newpass1 = request.POST.get('newpassword')
+            newpass2 = request.POST.get('newpassword2')
+            if ud.password == oldpass:
+                if newpass1 == newpass2:
+                    ud.password = newpass1
+                    ud.save()
+                    messages.success(request, 'Password changed successfully!')
+                    return redirect ('adminChangePassword')
+                else:
+                    messages.error(request, 'New passwords do not match.')
+            else:
+                messages.error(request, 'Incorrect old password. Please try again.')
     return render(request , 'pages/admin/changePassword.html')
 
 def adminBookDetails(request , book_id):
