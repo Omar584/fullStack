@@ -10,15 +10,7 @@
 <body>
     <div class="mainPage"> 
         {% include 'pages/user/profileNavBar.html' %}
-        <script>
-            function x(event) {
-                let phone = document.getElementById('phone').value
-                if (!(/[0-9]/.test(phone))) {
-                    alert('invalid phone number');
-                    event.preventDefault();
-                }
-            }
-        </script>
+        
         <div class="profile-container"> 
             <h2 class="lbl">User Profile</h2> 
             <div class="profile-photo"> 
@@ -79,6 +71,15 @@
         </div> 
     </div> 
   </div> 
+  <script>
+    function x(event) {
+        let phone = document.getElementById('phone').value
+        if (!(/[0-9]/.test(phone))) {
+            alert('invalid phone number');
+            event.preventDefault();
+        }
+    }
+</script>
 </body> 
 </html> 
  

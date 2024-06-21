@@ -6,20 +6,12 @@
     <meta charset="UTF-8">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/main/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
     <title>Home page</title>
 </head>
 <body>
     <div class = "mainPage">
-        <nav>
-            <ul>
-                <!-- Home page -->
-                <li><a href="{% url 'adminHome' %}">Home</a>
-                <li><a href="{% url 'adminBooks' %}">Books</a>
-                <li><a href="{% url 'addBook' %}">Add-Book</a></li>
-                <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a> 
-                <li><a href="{% url 'adminProfile'  %}">Profile</a>     
-            </ul>      
-        </nav>
+        {% include 'pages/admin/navBar.html'%}
         <div class="quote">
             A Great Opera House isn't Run By a Direcotr,
             But By a Great Adminstrator

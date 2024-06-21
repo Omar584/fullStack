@@ -7,18 +7,12 @@
     {% load static %}
     <!-- Link to an external CSS file for styling the page -->
     <link rel="stylesheet" href="{% static 'css/adminpages/editBook.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+
 </head>
 <body>
     <div class = "mainPage">
-        <nav>
-            <ul>
-                <li><a href="{% url 'adminHome' %}">Home</a>
-                <li><a href="{% url 'adminBooks' %}">Books</a>
-                <li><a href="{% url 'addBook' %}">Add-Book</a></li>
-                <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a> 
-                <li><a href="{% url 'adminProfile'  %}">Profile</a>    
-            </ul>      
-        </nav>
+        {% include 'pages/admin/navBar.html'%}
         <h1>Delete-Book</h1>
         <form action="{% url 'deleteBookPage' %}" method="post" id="deleteForm">
             {% csrf_token %}

@@ -10,6 +10,8 @@ urlpatterns = [
     path('bookDetils/<int:book_id>/' , views.adminBookDetails , name = 'adminBookDetails'),
     path('addBook/' , views.addBook , name = 'addBook') ,
     path('editBook/<int:book_id>/', views.edit_book, name='editBookPage') ,
+        path('logout/', views.custom_logout_view, name='adminLogout'),
+
     
 
 ]

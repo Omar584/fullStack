@@ -2,7 +2,6 @@ from django.shortcuts import render , get_object_or_404,redirect
 from book.models import Book
 from userData.models import User
 from django.contrib.auth import logout
-from django.shortcuts import redirect
 from django.contrib import messages
 from django.views.decorators.http import require_POST
 

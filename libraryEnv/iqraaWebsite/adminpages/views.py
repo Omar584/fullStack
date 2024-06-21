@@ -1,9 +1,16 @@
-from django.shortcuts import render , get_object_or_404
 from django.shortcuts import render , get_object_or_404, redirect
 from book.models import Book
 from userData.models import User
 from .forms import BookForm
 from django.contrib import messages
+from django.contrib.auth import logout
+
+
+def custom_logout_view(request):
+    logout(request)
+    return redirect('index')  # Redirect to the index view in the mainPages app
+
+
 def adminHome(request):
     return render(request , 'pages/admin/adminPage.html')
 

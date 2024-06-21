@@ -5,21 +5,14 @@
     <title>Add-Book</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/adminpages/editBook.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+
 </head>
 <body>
     <!-- Main container div for the page content -->
     <div class="mainPage">
         <!-- Navigation menu for the site -->
-        <nav>
-            <ul>
-                <!-- List of links to other pages in the admin interface -->
-                <li><a href="{% url 'adminHome' %}">Home</a>
-                <li><a href="{% url 'adminBooks' %}">Books</a>
-                <li><a href="{% url 'addBook' %}">Add-Book</a></li>
-                <li><a href="{% url 'deleteBookPage' %}">Delete-Book</a> 
-                <li><a href="{% url 'adminProfile'  %}">Profile</a>
-            </ul>
-        </nav>
+        {% include 'pages/admin/navBar.html'%}
         <!-- Heading for the current page -->
         <h1>Add-Book</h1>
         <!-- Form for adding a new book -->
