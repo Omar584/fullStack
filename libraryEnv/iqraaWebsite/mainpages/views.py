@@ -7,19 +7,16 @@ def index(request):
     if request.method == 'POST':
         un = request.POST.get('uname')
         pas = request.POST.get('password')
-        user = User.objects.filter(username=un,password=pas).first()
+        user = User.objects.filter(username=un, password=pas).first()
         if user is not None:
             request.session['username'] = user.pk
-            messages.success(request, f'Welcome, {un}!')
-            user = request.session.get('username')
-            ud = User.objects.get(pk=user)
-            if ud.isAdmin:
+            if user.isAdmin:
                 return redirect('adminHome')
             else:
                 return redirect('userPage')
         else:
             messages.error(request, 'Invalid username or password')
-    return render(request,'pages/main/index.html')
+    return render(request, 'pages/main/index.html')
 
 def books(request):
     if 'search' in request.GET:
