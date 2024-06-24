@@ -18,6 +18,17 @@
                 <input type="text" id="Username" name="uname" required><br>
                 <label class="label" for="Password">Passowrd</label><br>
                 <input type="password" id="Password" name="password" required><br>
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                            {% if forloop.last %}
+                                <div class="alert {% if message.tags %}{{ message.tags }}{% endif %}">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 <div><input class="login" type="submit" value="Login" id="login"></div>
                 <div><a href="{% url 'signup' %}" id = "signUp" class="signUp">Don't have an account</a></div>
             </form>   

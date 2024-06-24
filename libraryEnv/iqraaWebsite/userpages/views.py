@@ -111,17 +111,10 @@ def userBookDetails(request , book_id):
 @require_POST
 def borrow_book(request, book_id):
     if 'username' not in request.session:
-        messages.error(request, 'You need to be logged in to borrow a book.')
         return redirect('index')
 
     book = get_object_or_404(Book, id=book_id)
     username = request.session.get('username')
     user = get_object_or_404(User, username=username)
-
-    if book in user.books.all():
-        messages.error(request, 'You have already borrowed this book.')
-    else:
-        user.books.add(book)
-        messages.success(request, f'You have successfully borrowed the book: {book.name}')
-    
+    user.books.add(book)
     return redirect('borrowedBooks')
