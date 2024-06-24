@@ -80,12 +80,13 @@ def adminChangePassword(request):
                 if newpass1 == newpass2:
                     ud.password = newpass1
                     ud.save()
-                    messages.success(request, 'Password changed successfully!')
-                    return redirect ('adminChangePassword')
+                    return render(request, 'pages/admin/delay_redirect.html', {'redirect_url': 'adminProfile'})
                 else:
                     messages.error(request, 'New passwords do not match.')
+                
             else:
                 messages.error(request, 'Incorrect old password. Please try again.')
+            print(messages.get_messages(request))
     return render(request , 'pages/admin/changePassword.html')
 
 def adminBookDetails(request , book_id):

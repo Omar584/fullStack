@@ -57,7 +57,7 @@ def userProfile(request):
 
 def userChangePassword(request):
     user = request.session.get('username')
-    if user is not None:
+    if user:
         ud = User.objects.get(pk=user)
         if request.method == 'POST':
             oldpass = request.POST.get('oldpassword')
