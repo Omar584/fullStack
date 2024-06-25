@@ -16,7 +16,7 @@ body{
   padding: 0 ;     
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.691841702501313) 68%, rgba(255,255,255,0) 100%),
-  url(../../images/libraryPhoto.jpg);
+  url(../image/libraryPhoto.jpg);
   background-size: cover;
   background-repeat: no-repeat;  
 }

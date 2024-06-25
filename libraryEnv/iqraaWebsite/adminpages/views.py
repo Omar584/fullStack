@@ -70,24 +70,19 @@ def adminProfile(request):
 
 def adminChangePassword(request):
     user = request.session.get('username')
-    if user is not None:
+    if user:
         ud = User.objects.get(pk=user)
         if request.method == 'POST':
             oldpass = request.POST.get('oldpassword')
             newpass1 = request.POST.get('newpassword')
-            newpass2 = request.POST.get('newpassword2')
-            if ud.password == oldpass:
-                if newpass1 == newpass2:
-                    ud.password = newpass1
-                    ud.save()
-                    return render(request, 'pages/admin/delay_redirect.html', {'redirect_url': 'adminProfile'})
-                else:
-                    messages.error(request, 'New passwords do not match.')
-                
-            else:
-                messages.error(request, 'Incorrect old password. Please try again.')
-            print(messages.get_messages(request))
-    return render(request , 'pages/admin/changePassword.html')
+            ud.password = newpass1
+            ud.save()
+            return render(request, 'pages/admin/delay_redirect.html', {'redirect_url': 'adminProfile'})
+
+    return render(request , 'pages/admin/changePassword.html',{'pass':ud.password})
+
+
+
 
 def adminBookDetails(request , book_id):
     book = get_object_or_404(Book , id = book_id)
